@@ -20,12 +20,12 @@ $(function () {
     loadingEnd: function () {//加载load图片完成
       $loadingBg.addClass('showAnim').on('webkitAnimationEnd', function () {
         $(this).off();
-        $('#loveBg').show();
         loading({
           img: aLoadImg,
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
+              $('#loveBg').show();
               //真正页面运行
               $('#loveBtn').on(od, function () {//上传并抽取电影票点击事件
                 $('#lovepreview').show().addClass('showAnim').on('webkitAnimationEnd', function () {

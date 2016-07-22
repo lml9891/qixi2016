@@ -19,13 +19,13 @@ $(function () {
     loadingEnd: function () {//加载load图片完成
       $loadingBg.addClass('showAnim').on('webkitAnimationEnd', function () {
         $(this).off();
-        $('#loveSucBg').show();
         loading({
           img: aLoadImg,
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
               //真正页面运行
+              $('#loveSucBg').show();
               $('#loveSucBtn').on(od, function (e) {
                 e.stopPropagation();
                 $loveSucSun.show().addClass('showAnim').on('webkitAnimationEnd', function () {

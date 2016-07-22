@@ -9,7 +9,6 @@ $(function () {
   ];
   var $loadingBg = $('#loadingBg');
   var $infoBg = $('#infoBg');
-  var $loveSucSun = $('#loveSucSun');
   var od = 'ontouchstart' in window ? 'tap':'click';
 
   loading({
@@ -18,13 +17,13 @@ $(function () {
     loadingEnd: function () {//加载load图片完成
       $loadingBg.addClass('showAnim').on('webkitAnimationEnd', function () {
         $(this).off();
-        $('#infoBg').show();
         loading({
           img: aLoadImg,
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
               //真正页面运行
+              $('#infoBg').show();
 
             });
           }

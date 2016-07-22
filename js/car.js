@@ -23,13 +23,13 @@ $(function () {
     loadingEnd: function () {//加载load图片完成
       $loadingBg.addClass('showAnim').on('webkitAnimationEnd', function () {
         $(this).off();
-        $('#carBg').show();
         loading({
           img: aLoadImg,
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
               //真正页面运行
+              $('#carBg').show();
               jq360();
             });
           }
