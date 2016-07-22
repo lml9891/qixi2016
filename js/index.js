@@ -1,7 +1,7 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
     'http://b.hiphotos.baidu.com/image/w%3D2048/sign=e12391182ff5e0feee188e01685835a8/c8177f3e6709c93d61f390f69d3df8dcd10054a9.jpg',

@@ -1,10 +1,10 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
-    '../images/repeat.jpg'
+    'images/repeat.jpg'
   ];
   var $loadingBg = $('#loadingBg');
   var $repeatBg = $('#repeatBg');

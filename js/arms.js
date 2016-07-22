@@ -1,26 +1,26 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
-    '../images/stars.jpg',
-    '../images/armsFont.png',
-    '../images/armsQuit.png',
-    '../images/arm1Img.jpg',
-    '../images/arm1Font.png',
-    '../images/arm2Img.jpg',
-    '../images/arm2Font.png',
-    '../images/arm3Img.jpg',
-    '../images/arm3Font.png',
-    '../images/arm4Img.jpg',
-    '../images/arm4Font.png',
-    '../images/arm5Img.jpg',
-    '../images/arm5Font.png',
-    '../images/arm6Img.jpg',
-    '../images/arm6Font.png',
-    '../images/arm7Img.jpg',
-    '../images/arm7Font.png'
+    'images/stars.jpg',
+    'images/armsFont.png',
+    'images/armsQuit.png',
+    'images/arm1Img.jpg',
+    'images/arm1Font.png',
+    'images/arm2Img.jpg',
+    'images/arm2Font.png',
+    'images/arm3Img.jpg',
+    'images/arm3Font.png',
+    'images/arm4Img.jpg',
+    'images/arm4Font.png',
+    'images/arm5Img.jpg',
+    'images/arm5Font.png',
+    'images/arm6Img.jpg',
+    'images/arm6Font.png',
+    'images/arm7Img.jpg',
+    'images/arm7Font.png'
   ];
   var $loadingBg = $('#loadingBg');
   var $armsBg = $('#armsBg');

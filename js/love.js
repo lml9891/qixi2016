@@ -1,13 +1,13 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
-    '../images/stars.jpg',
-    '../images/love.png',
-    '../images/loveBtn.png',
-    '../images/lovepreview.jpg'
+    'images/stars.jpg',
+    'images/love.png',
+    'images/loveBtn.png',
+    'images/lovepreview.jpg'
   ];
   var $loadingBg = $('#loadingBg');
   var $loveBg = $('#loveBg');

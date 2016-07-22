@@ -1,11 +1,11 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
-    '../images/stars.jpg',
-    '../images/info.jpg'
+    'images/stars.jpg',
+    'images/info.jpg'
   ];
   var $loadingBg = $('#loadingBg');
   var $infoBg = $('#infoBg');

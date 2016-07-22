@@ -1,16 +1,16 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
-    '../images/stars.jpg',
-    '../images/car.png',
-    '../images/carIn.png',
-    '../images/car1.png',
-    '../images/car2.png',
-    '../images/car3.png',
-    '../images/car4.png'
+    'images/stars.jpg',
+    'images/car.png',
+    'images/carIn.png',
+    'images/car1.png',
+    'images/car2.png',
+    'images/car3.png',
+    'images/car4.png'
   ];
   var $loadingBg = $('#loadingBg');
   var $carBg = $('#carBg');
