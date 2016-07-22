@@ -1,7 +1,7 @@
 $(function () {
 
   var aLoadImgFirst = [
-    '../images/loading.jpg'
+    'images/loading.jpg'
   ];
   var aLoadImg = [
     '../images/stars.jpg',
