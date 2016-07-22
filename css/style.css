@@ -316,14 +316,58 @@ a{color:#000; text-decoration:none;}
 	word-break: break-all;
 }
 /*点赞 start*/
+.goodBg {
+	background: url(../images/stars.jpg) no-repeat center top;
+  background-size:100% 100%;
+  height: 1138px;
+}
+.goodH2 {
+	height: 390px;
+	background: url(../images/good.png) no-repeat center top;
+  background-size:640px 1138px;
+	width: 640px;
+}
+.goodBtn {
+	height: 73px;
+	background: url(../images/good.png) no-repeat center top;
+  background-size:640px 1138px;
+	background-position: -166px -937px;
+	margin: 196px auto;
+	width: 307px;
+	display: block;
+}
+.goodTo {
+	height: 71px;
+	background: url(../images/good.png) no-repeat center top;
+  background-size:640px 1138px;
+	background-position: -295px -815px;
+	left: 295px;
+	top: 815px;
+	width: 48px;
+  animation:goodToAnim 3s infinite linear;
+  -webkit-animation:goodToAnim 3s infinite linear;
+}
+
+@-webkit-keyframes goodToAnim{
+	0%{
+    -webkit-transform: translate(0, 0);
+  }50%{
+    -webkit-transform: translate(0, -35px);
+  }100%{
+		-webkit-transform: translate(0, 0);
+  }
+}
 .iWrapper {
-	position: absolute;
 	z-index: 1;
 	overflow: hidden;
+	height: 351px;
+	width: 640px;
 }
 
 .iWrapper .iScroller {
 	position: absolute;
+	width: 548px;
+	left:48px;
 	z-index: 1;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	/*width: 2000px;*/
@@ -344,32 +388,39 @@ a{color:#000; text-decoration:none;}
 	text-size-adjust: none;
 }
 
-.iWrapper .iScrollVerticalScrollbar {
-	position: absolute;
-	z-index: 9999;
-	width: 16px;
-	bottom: 2px;
-	top: 2px;
-	right: 0;
-	overflow: hidden;
-	background:url(http://1251120703.cdn.myqcloud.com/1251120703/zaocan/images/iSVS.png) no-repeat;
-	background-size:100% 100%;
+.goodList li {
+	padding: 0 0 0 36px;
+	color: #fff;
 }
 
-.iWrapper .iScrollVerticalScrollbar.iScrollBothScrollbars {
-	bottom: 18px;
+.goodListL {
+	float: left;
+	width: 390px;
+	font-size: 30px;
+	line-height: 104px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
 }
-
-.iWrapper .iScrollIndicator {
-	position: absolute;
-	background: #ff4040;
+.goodListR {
+	width: 122px;
+	padding: 21px 0;
+	float: left;
 }
-
-.iWrapper .iScrollVerticalScrollbar .iScrollIndicator {
-	width: 100%;
+.goodHeart {
+	width: 122px;
+	height: 42px;
+	background: url(../images/good.png) no-repeat center top;
+  background-size:640px 1138px;
+	background-position: -484px -673px;
 }
-/*首页自定义滚动条 end*/
-
+.goodHeartOn {
+	background-position: -484px -400px;
+}
+.goodNum {
+	font-size: 14px;
+	line-height: 26px;
+}
 /* 表白love */
 .loveBg {
   background: url(../images/stars.jpg) no-repeat center top;
@@ -473,6 +524,25 @@ a{color:#000; text-decoration:none;}
   top:0;
   left:50%;
   margin-left: -320px;
+}
+
+/* 预约成功 */
+.orderSucBg {
+  background: url(../images/stars.jpg) no-repeat center top;
+  background-size:100% 100%;
+  height: 1138px;
+}
+.orderSuc {
+  width: 491px;
+  height: 149px;
+  background: url(../images/orderSuc.png) no-repeat;
+  background-size:100% 100%;
+  margin: 217px auto 0;
+  padding-top: 397px;
+}
+.orderSucBtn {
+  width: 222px;
+  height: 73px;
 }
 
 /* 个人信息(info和infofull) */
