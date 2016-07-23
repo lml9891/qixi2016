@@ -44,6 +44,10 @@ a{color:#000; text-decoration:none;}
 }
 
 /* 公共 */
+.indexWraper {
+	height:1040px;
+	overflow:hidden;
+}
 .posCenter {
   position: absolute;
   width: 640px;
@@ -56,7 +60,7 @@ a{color:#000; text-decoration:none;}
 .loadingBg {
   background: url(../images/loading.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
   z-index:2;
 }
 .loadingTip {
@@ -74,16 +78,20 @@ a{color:#000; text-decoration:none;}
 /* 首页 */
 .indexBg {
 	background: url(../images/indexBg.jpg) no-repeat center center;
-	height: 1334px;
+	padding-top: 100px;
+	height: 1040px;
+	top:-100px
 }
 
 .floorBg {
 	background: url(../images/indexFloor.png) no-repeat -430px top;
-	height: 1334px;
+	height: 1040px;
 	left: 0;
 	width: 640px;
 	top: 0;
 	z-index: 2;
+	/*transition: background-position 0.5s linear,transform 0.5s linear;
+	-webkit-transition: background-position 0.5s linear,transform 0.5s linear;*/
 }/*background-position: -440px 110px;*/
 .floorBgAnim {
   animation:floorBgAnim 0.5s linear forwards;
@@ -143,7 +151,7 @@ a{color:#000; text-decoration:none;}
 .indexCar {
 	background: url(../images/indexCar.png) no-repeat 0 -820px;
 	background-size:100% 1334px;
-	top:820px;
+	top:720px;
 	left: 0;
 	width: 640px;
 	height: 380px;
@@ -215,18 +223,6 @@ a{color:#000; text-decoration:none;}
 	left: 258px;
 	top: 356px;
 }
-.indexCircleBox1 {
-  animation:indexCircleBox 3s infinite linear;
-  -webkit-animation:indexCircleBox 3s infinite linear;
-}
-.indexCircleBox2 {
-  animation:indexCircleBox 3s infinite linear 0.5s;
-  -webkit-animation:indexCircleBox 3s infinite linear 0.5s;
-}
-.indexCircleBox3 {
-  animation:indexCircleBox 3s infinite linear 1s;
-  -webkit-animation:indexCircleBox 3s infinite linear 1s;
-}
 
 @-webkit-keyframes indexCircleBox{
 	0%{
@@ -255,20 +251,27 @@ a{color:#000; text-decoration:none;}
 .indexCircleBox1 {
 	left: 208px;
   top: 566px;
+  animation:indexCircleBox 3s infinite linear;
+  -webkit-animation:indexCircleBox 3s infinite linear;
+	z-index: 3;
 }
 .indexCircleBox2 {
-	left: 338px;
-	top: 806px;
+	left: 130px;
+  top: 40px;
+  animation:indexCircleBox 3s infinite linear 0.5s;
+  -webkit-animation:indexCircleBox 3s infinite linear 0.5s;
 }
 .indexCircleBox3 {
 	left: 338px;
-	top: 1026px;
+	top: 926px;
+  animation:indexCircleBox 3s infinite linear 1s;
+  -webkit-animation:indexCircleBox 3s infinite linear 1s;
 }
 .indexShip {
 	width: 677px;
 	height: 197px;
 	left: -37px;
-  top: 737px;
+  top: 637px;
 	background: url(../images/indexShip1.png) no-repeat;
 	background-size:100% 100%;
 }
@@ -289,6 +292,25 @@ a{color:#000; text-decoration:none;}
   }100%{
 		background: url(../images/indexShip1.png) no-repeat;
 		background-size:100% 100%;
+  }
+}
+.indexShip0 {
+	width: 365px;
+	height: 197px;
+	left: -365px;
+  top: 637px;
+	background: url(../images/indexShip0.png) no-repeat;
+	background-size:100% 100%;
+	animation:indexShip0 10s infinite linear;
+	-webkit-animation:indexShip0 10s infinite linear;
+}
+@-webkit-keyframes indexShip0{
+	0%{
+		-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+  }100%{
+		-webkit-transform: translate(1005px,0);
+		transform: translate(1005px,0);
   }
 }
 .indexView {
@@ -319,18 +341,18 @@ a{color:#000; text-decoration:none;}
 .goodBg {
 	background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .goodH2 {
 	height: 390px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1138px;
+  background-size:640px 1040px;
 	width: 640px;
 }
 .goodBtn {
 	height: 73px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1138px;
+  background-size:640px 1040px;
 	background-position: -166px -937px;
 	margin: 196px auto;
 	width: 307px;
@@ -339,7 +361,7 @@ a{color:#000; text-decoration:none;}
 .goodTo {
 	height: 71px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1138px;
+  background-size:640px 1040px;
 	background-position: -295px -815px;
 	left: 295px;
 	top: 815px;
@@ -411,7 +433,7 @@ a{color:#000; text-decoration:none;}
 	width: 122px;
 	height: 42px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1138px;
+  background-size:640px 1040px;
 	background-position: -484px -673px;
 }
 .goodHeartOn {
@@ -425,7 +447,7 @@ a{color:#000; text-decoration:none;}
 .loveBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .loveFont1,.loveFont2,.loveFont3,.loveStar {
   width: 640px;
@@ -479,7 +501,7 @@ a{color:#000; text-decoration:none;}
   top:0;
   left:0;
   width: 640px;
-  height: 1138px;
+  height: 1040px;
   background: url(../images/lovepreview.jpg) no-repeat;
   background-size:100% 100%;
 }
@@ -503,7 +525,7 @@ a{color:#000; text-decoration:none;}
 .loveSucBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .loveSuc {
   width: 491px;
@@ -519,7 +541,7 @@ a{color:#000; text-decoration:none;}
 }
 .loveSucSun {
   width: 640px;
-  height: 1138px;
+  height: 1040px;
   background: rgba(0,0,0,0.9);
   top:0;
   left:50%;
@@ -530,7 +552,7 @@ a{color:#000; text-decoration:none;}
 .orderSucBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .orderSuc {
   width: 491px;
@@ -549,7 +571,7 @@ a{color:#000; text-decoration:none;}
 .infoBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .infoTitle {
   padding-top: 270px;
@@ -615,7 +637,7 @@ a{color:#000; text-decoration:none;}
 .winBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .win {
   margin: 218px auto; 0;
@@ -656,7 +678,7 @@ a{color:#000; text-decoration:none;}
 .loseBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .lose {
   margin: 217px auto 0;
@@ -675,7 +697,7 @@ a{color:#000; text-decoration:none;}
 .repeatBg {
   background: url(../images/repeat.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .repeatBtn {
   left: 208px;
@@ -688,12 +710,12 @@ a{color:#000; text-decoration:none;}
 .carBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .carBg2 {
   background: url(../images/car.png) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
   width: 640px;
 }
 .carIn {
@@ -723,11 +745,11 @@ a{color:#000; text-decoration:none;}
 .armsBg {
   background: url(../images/stars.jpg) no-repeat center top;
   background-size:100% 100%;
-  height: 1138px;
+  height: 1040px;
 }
 .armsFont {
   width: 640px;
-  height: 1138px;
+  height: 1040px;
   background: url(../images/armsFont.png) no-repeat center top;
   background-size:100% 100%;
 }

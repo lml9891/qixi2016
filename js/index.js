@@ -12,6 +12,7 @@ $(function () {
     'images/indexCar.png',
     'images/indexStar1.png',
     'images/indexStar2.png',
+    'images/indexShip0.png',
     'images/indexShip1.png',
     'images/indexShip2.png',
     'images/indexShip3.png',
@@ -51,22 +52,28 @@ $(function () {
   function init() {
     $('#indexBg').show();
     //重力
-    // orientation();
+    orientation();
 
     var bOne = false;
 
     //点击放大镜
-    $('#indexBig').on(od,  function () {
+    $('#indexBig').on(od,  triggerBig);
+
+    function triggerBig() {
       bOne = !bOne;
-      bCanGravity = bOne;
+      bCanGravity = !bOne;
       if (bOne) {
         $(this).hide();
 
-        $('#floorBg').css("backgroundPosition", -430 + "px " + 0 + "px").addClass('floorBgAnim').on('webkitAnimationEnd', function () {
-          $(this).off();
+        $('#floorBg').css("backgroundPosition", -430 + "px " + 0 + "px")
+        .animate({
+          'background-position': '-350px 150px',
+      		'transform': 'translate(0,120px) scale(1.9)',
+        }, function () {
           $('#indexBig').addClass('indexBigAnim').show();
           $('#indexView').addClass('showAnim');
         });
+
         $('#bigHide,#indexCircleBox1,#indexHeart').hide();
 
         //文字跑马灯
@@ -74,10 +81,15 @@ $(function () {
       }else {
         $('#indexBig').removeClass('indexBigAnim').show();
         $('#indexView').removeClass('showAnim');
-        $('#floorBg').removeClass('floorBgAnim');
-        $('#bigHide,#indexCircleBox1,#indexHeart').show();
+        $('#floorBg').animate({
+          'background-position': '-430px top',
+      		'transform': 'translate(0,0) scale(1)',
+        },function () {
+            $('#bigHide,#indexCircleBox1,#indexHeart').show();
+        });
+
       }
-    });
+    }
   }
 
 });
