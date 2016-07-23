@@ -7,7 +7,8 @@ $(function () {
     'images/stars.jpg',
     'images/armsFont.png',
     'images/armsQuit.png',
-    'images/arm1Img.jpg',
+    'images/arm1Img1.jpg',
+    'images/arm1Img2.png',
     'images/arm1Font.png',
     'images/arm2Img.jpg',
     'images/arm2Font.png',
@@ -15,7 +16,8 @@ $(function () {
     'images/arm3Font.png',
     'images/arm4Img.jpg',
     'images/arm4Font.png',
-    'images/arm5Img.jpg',
+    'images/arm5Img1.jpg',
+    'images/arm5Img2.png',
     'images/arm5Font.png',
     'images/arm6Img.jpg',
     'images/arm6Font.png',
@@ -54,11 +56,15 @@ $(function () {
                   $armsMask.show().addClass('showAnim');
                   $('#arms'+ (i+1) +'Alert').show();
                   $('#arm'+ (i+1) +'Font').addClass('armsFontIn');
+                  $('#arm'+ (i+1) +'Img2').addClass('arm'+ (i+1) +'ImgAnim');
+
                 });
                 $('#arms'+ (i+1) +'Quit').on(od, function () {
                   $armsMask.hide().removeClass('showAnim');
                   $('#arms'+ (i+1) +'Alert').hide();
                   $('#arm'+ (i+1) +'Font').removeClass('armsFontIn');
+                  $('#arm'+ (i+1) +'Img2').removeClass('arm'+ (i+1) +'ImgAnim');
+
                 });
               });
 

@@ -23,6 +23,11 @@ $(function () {
   ];
   var $loadingBg = $('#loadingBg');
   var $indexBg = $('#indexBg');
+  var $indexBig = $('#indexBig');
+  var $floorBg = $('#floorBg');
+  var $indexTip = $('#indexTip');
+  var $floorBg = $("#floorBg");
+  var $indexHeart = $('#indexHeart');
   var od = 'ontouchstart' in window ? 'tap':'click';
   var loadingTime = null;
 
@@ -50,38 +55,50 @@ $(function () {
   loadingTime = setTimeout(init,20000); //20秒若没loading完，自动进页面
 
   function init() {
-    $('#indexBg').show();
+    $indexBg.show();
     //重力
     orientation();
 
     var bOne = false;
 
     //点击放大镜
-    $('#indexBig').on(od,  triggerBig);
+    $indexBig.on(od,  triggerBig);
+    //点击大楼按钮
+    $('#indexCircleBox1').on(od, function () {
+      toBig(true);
+      setTimeout(function () {
+        window.location.href = 'good.html';
+      }, 2000);
+    });
 
+    function toBig(isGoOut) {
+      $indexBig.hide();
+
+      $floorBg.css("backgroundPosition", -430 + "px " + 0 + "px")
+      .animate({
+        'background-position': '-350px 150px',
+        'transform': 'translate(0,120px) scale(1.9)',
+      }, function () {
+        if (!isGoOut) {
+          $indexBig.addClass('indexBigAnim').show();
+        }
+        $('#indexView').addClass('showAnim');
+      });
+
+      $('#bigHide,#indexCircleBox1,#indexHeart').hide();
+
+      //文字跑马灯
+      autoTabFont();
+    }
     function triggerBig() {
       bOne = !bOne;
       bCanGravity = !bOne;
       if (bOne) {
-        $(this).hide();
-
-        $('#floorBg').css("backgroundPosition", -430 + "px " + 0 + "px")
-        .animate({
-          'background-position': '-350px 150px',
-      		'transform': 'translate(0,120px) scale(1.9)',
-        }, function () {
-          $('#indexBig').addClass('indexBigAnim').show();
-          $('#indexView').addClass('showAnim');
-        });
-
-        $('#bigHide,#indexCircleBox1,#indexHeart').hide();
-
-        //文字跑马灯
-        autoTabFont();
+        toBig();
       }else {
-        $('#indexBig').removeClass('indexBigAnim').show();
+        $indexBig.removeClass('indexBigAnim').show();
         $('#indexView').removeClass('showAnim');
-        $('#floorBg').animate({
+        $floorBg.animate({
           'background-position': '-430px top',
       		'transform': 'translate(0,0) scale(1)',
         },function () {
@@ -151,7 +168,19 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
 
-		$("#floorBg").css("backgroundPosition", gamma / 500 * 140 -430 + "px " + beta / 500 * 140 + "px");
+		$floorBg.css("backgroundPosition", gamma / 500 * 140 -430 + "px " + beta / 500 * 140 + "px");
+    $indexHeart.css({
+      left:gamma / 500 * 140 + 192,
+      top:beta / 500 * 140 + 346
+    });
+    $indexBig.css({
+      left:gamma / 500 * 140 + 258,
+      top:beta / 500 * 140 + 356
+    });
+    $indexTip.css({
+      left:gamma / 500 * 140,
+      top:beta / 500 * 140 - 70
+    });
 
 		this._lastGamma = gamma;
 		this._lastBeta = beta;

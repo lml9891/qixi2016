@@ -159,10 +159,11 @@ a{color:#000; text-decoration:none;}
 .indexTip {
 	background: url(../images/indexCar.png) no-repeat;
 	background-size:100% 1334px;
-	top:0;
+	top: -70px;
 	left: 0;
 	width: 640px;
 	height: 360px;
+	z-index: 3;
 }
 .indexTitle {
 	background: url(../images/indexTitle.png) no-repeat;
@@ -346,13 +347,11 @@ a{color:#000; text-decoration:none;}
 .goodH2 {
 	height: 390px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1040px;
 	width: 640px;
 }
 .goodBtn {
 	height: 73px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1040px;
 	background-position: -166px -937px;
 	margin: 196px auto;
 	width: 307px;
@@ -361,7 +360,6 @@ a{color:#000; text-decoration:none;}
 .goodTo {
 	height: 71px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1040px;
 	background-position: -295px -815px;
 	left: 295px;
 	top: 815px;
@@ -433,7 +431,6 @@ a{color:#000; text-decoration:none;}
 	width: 122px;
 	height: 42px;
 	background: url(../images/good.png) no-repeat center top;
-  background-size:640px 1040px;
 	background-position: -484px -673px;
 }
 .goodHeartOn {
@@ -723,7 +720,7 @@ a{color:#000; text-decoration:none;}
   background-size:100% 100%;
   width: 91px;
   height: 115px;
-  right: 100px;
+  right: 90px;
   top:861px;
   transform: scale(0.8);
   -webkit-transform: scale(0.8);
@@ -740,6 +737,12 @@ a{color:#000; text-decoration:none;}
   top: 855px;
   left: 0;
 }
+.carArms {
+  width: 387px;
+  height: 73px;
+  top: 634px;
+  left: 126px;
+}
 
 /*七种武器(arms)*/
 .armsBg {
@@ -751,7 +754,6 @@ a{color:#000; text-decoration:none;}
   width: 640px;
   height: 1040px;
   background: url(../images/armsFont.png) no-repeat center top;
-  background-size:100% 100%;
 }
 .armsAll {
   background: url(../images/arms.png) no-repeat center top;
@@ -866,14 +868,39 @@ a{color:#000; text-decoration:none;}
   background-size:100% 100%;
   width: 40px;
   height: 75px;
+	transform: scale(0.7);
+	-webkit-transform: scale(0.7);
 }
 .armImg {
   width: 497px;
   height: 495px;
-}
+}`
 .arm1Img {
-  background: url(../images/arm1Img.jpg) no-repeat;
+  background: url(../images/arm1Img1.jpg) no-repeat;
   background-size:100% 100%;
+}`
+.arm1Img2 {
+	top:0;left:0;
+	transform: translate(0,10px);
+}
+.arm5Img {
+  background: url(../images/arm5Img1.jpg) no-repeat;
+  background-size:100% 100%;
+}
+.arm5Img2 {
+	top:0;left:0;
+	transform: translate(0,10px);
+}
+.arm7Img2 {
+	top:0;left:0;
+}
+
+.arm1ImgAnim {animation:arm1ImgAnim 0.5s 1 ease forwards;-webkit-animation:arm1ImgAnim 0.5s 1 ease forwards;}
+.arm5ImgAnim {animation:arm1ImgAnim 0.5s 1 ease forwards;-webkit-animation:arm1ImgAnim 0.5s 1 ease forwards;}
+.arm6ImgAnim {animation:showAnim 1.5s 1 ease forwards;-webkit-animation:showAnim 1.5s 1 ease forwards;}
+.arm7ImgAnim {animation:showAnim 1.5s 1 ease forwards;-webkit-animation:showAnim 1.5s 1 ease forwards;}
+@-webkit-keyframes arm1ImgAnim{
+	0%{transform: translate(0,10px);}100%{transform: translate(0,0);}
 }
 .arm2Img {
   background: url(../images/arm2Img.jpg) no-repeat;
@@ -888,17 +915,10 @@ a{color:#000; text-decoration:none;}
   background-size:100% 100%;
 }
 .arm5Img {
-  background: url(../images/arm5Img.jpg) no-repeat;
+  background: url(../images/arm5Img1.jpg) no-repeat;
   background-size:100% 100%;
 }
-.arm6Img {
-  background: url(../images/arm6Img.jpg) no-repeat;
-  background-size:100% 100%;
-}
-.arm7Img {
-  background: url(../images/arm7Img.jpg) no-repeat;
-  background-size:100% 100%;
-}
+
 .armFont {
   -webkit-transform: translate(-497px,0);
   transform: translate(-497px,0);
@@ -988,11 +1008,11 @@ a{color:#000; text-decoration:none;}
 }
 @-webkit-keyframes carInAnim{
 	0%{
-    right:100px;opacity:0;-webkit-transform: scale(0.8);
+    right:90px;opacity:0;-webkit-transform: scale(0.8);
   }50%{
-    right:70px;opacity:1;-webkit-transform: scale(1);
+    right:60px;opacity:1;-webkit-transform: scale(1);
   }100%{
-    right:100px;opacity:0;-webkit-transform: scale(0.8);
+    right:90px;opacity:0;-webkit-transform: scale(0.8);
   }
 }
 
