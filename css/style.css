@@ -182,7 +182,7 @@ a{color:#000; text-decoration:none;}
 	background: url(../images/indexCar.png) no-repeat;
 	background-size:640px 1038px;
 	background-position: -314px -174px;
-	top: 224px;
+	top: 174px;
 	left: 314px;
 	width: 144px;
 	height: 118px;
@@ -204,7 +204,7 @@ a{color:#000; text-decoration:none;}
 	background: url(../images/indexBig.png) no-repeat center center;
 	background-size:38px 38px;
 	left: 258px;
-	top: 296px;
+	top: 247px;
   animation:indexBig 1s infinite linear;
   -webkit-animation:indexBig 1s infinite linear;
 	z-index: 4;
