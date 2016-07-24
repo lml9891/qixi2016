@@ -73,10 +73,24 @@ $(function () {
     function toBig(isGoOut) {
       $indexBig.hide();
 
-      $floorBg.css("backgroundPosition", -430 + "px " + 0 + "px")
+      $('#indexTip,#indexHeart,#indexCircleBox1').hide();//#bigHide,#indexCircleBox1,
+
+      $('.indexCar').animate({
+        'left': 40,
+        'top': 830
+      });
+      $('.indexCar').animate({
+        'left': 40,
+        'top': 830
+      });
+      $('.indexShip,.indexShip0').animate({
+        'top': 807
+      });
+
+      $floorBg.css("backgroundPosition", -320 + "px " + 0 + "px")
       .animate({
-        'background-position': '-350px 150px',
         'transform': 'scale(1.9)',
+        'background-position': '-250px 180px'
       }, function () {
         if (!isGoOut) {
           $indexBig.addClass('indexBigAnim').show();
@@ -84,7 +98,6 @@ $(function () {
         $('#indexView').addClass('showAnim');
       });
 
-      $('#bigHide,#indexCircleBox1,#indexHeart').hide();
 
       //文字跑马灯
       autoTabFont();
@@ -99,11 +112,11 @@ $(function () {
         $indexBig.removeClass('indexBigAnim').hide();
         $('#indexView').removeClass('showAnim');
         $floorBg.animate({
-          'background-position': '-430px top',
+          'background-position': '-320px top',
       		'transform': 'scale(1)',
         },function () {
-            $indexBig.hide();
-            $('#bigHide,#indexCircleBox1,#indexHeart').show();
+            $indexBig.show();
+            $('#indexTip,#indexHeart,#indexCircleBox1').show();//#bigHide,#indexCircleBox1,
         });
         bCanGravity = true;
       }
