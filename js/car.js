@@ -17,27 +17,10 @@ $(function () {
   var $loveSucSun = $('#loveSucSun');
   var od = 'ontouchstart' in window ? 'tap':'click';
 
-  loading({
-    img: aLoadImgFirst,
-    showProgress: false,
-    loadingEnd: function () {//加载load图片完成
-      $loadingBg.addClass('showAnim').on('webkitAnimationEnd', function () {
-        $(this).off();
-        loading({
-          img: aLoadImg,
-          loadingEnd: function () {//本页所有图片完成
-            $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
-              $(this).hide().off();
-              //真正页面运行
-              $('#carBg').show();
-              jq360();
-            });
-          }
-        });
-      });
-
-    }
-  });
+  //真正页面运行
+  $('#carBg').show();
+  jq360();
+  
 });
 /**
  * img array 必须 加载的图片

@@ -7,6 +7,10 @@ $(function () {
       $('#infoError').html('您输入的情话大于30字');
       return;
     }
+    if (sLoveInpVal.length<=0) {
+      $('#infoError').html('上传情话不能为空');
+      return;
+    }
     add_love_content(sLoveInpVal,function (data) {
       if (data.Success) {
         $('#lovepreview').show().addClass('showAnim').on('webkitAnimationEnd', function () {

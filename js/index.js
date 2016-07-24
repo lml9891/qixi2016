@@ -41,12 +41,12 @@ $(function () {
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
+              //真正页面运行
               get_user_new_content(function (data) {
                 if (data.Success) {
                   $('#indexFontGoContent').html(data.Message);
                 }
               });
-              //真正页面运行
               init();
             });
           }
@@ -76,6 +76,7 @@ $(function () {
     });
 
     function toBig(isGoOut) {
+      bCanGravity = false;
       $indexBig.hide();
 
       $('#indexTip,#indexHeart,#indexCircleBox1').hide();//#bigHide,#indexCircleBox1,
@@ -88,34 +89,22 @@ $(function () {
         'top': 807
       });
 
-      $('#floorBgImg').css({
-        'transform': 'scale(1.9)',
-        left: -170,
-        top: 376
-      });
+      $('#floorBgImg').css('left',-320).addClass('floorBgImgIn');
 
       $floorBg.css({
-        "left": -320,
         'transform': 'scale(1.9)',
-        'background-position': '-250px 180px'
+        '-webkit-transform': 'scale(1.9)'
       }).on('webkitTransitionEnd', function () {
         $(this).off();
         if (!isGoOut) {
-          $indexBig.addClass('indexBigAnim').show();
+          $indexBig.css({
+            left: 338,
+            top: 473
+          }).show();
+          // $indexBig.addClass('indexBigAnim').show();
         }
         $('#indexView').addClass('showAnim');
       });
-
-      // .animate({
-      //   'transform': 'scale(1.9)',
-      //   'background-position': '-250px 180px'
-      // }, function () {
-      //   if (!isGoOut) {
-      //     $indexBig.addClass('indexBigAnim').show();
-      //   }
-      //   $('#indexView').addClass('showAnim');
-      // });
-
 
       //文字跑马灯
       autoTabFont();
@@ -125,7 +114,6 @@ $(function () {
 
       if (bOne) {
         toBig();
-        bCanGravity = false;
       }else {
         $indexBig.removeClass('indexBigAnim').hide();
         $('#indexView').removeClass('showAnim');
@@ -139,27 +127,22 @@ $(function () {
         $('.indexShip0').css({
           'top': 610
         });
-        $('#floorBgImg').css({
-          'transform': 'scale(1)',
-          left: -320,
-          top: 0
+        $('#floorBgImg').removeClass('floorBgImgIn').addClass('floorBgImgOut').on('webkitAnimationEnd', function () {
+          $(this).off().removeClass('floorBgImgOut');
         });
 
         $floorBg.css({
           'left': 0,
-      		'transform': 'scale(1)'
+      		'transform': 'scale(1)',
+          '-webkit-transform': 'scale(1)'
         }).on('webkitTransitionEnd', function () {
           $(this).off();
-          $indexBig.show();
+          $indexBig.css({
+            left: 258,
+            top: 297
+          }).show();
           $('#indexTip,#indexHeart,#indexCircleBox1').show();
         });
-        // $floorBg.animate({
-        //   'background-position': '-320px top',
-      	// 	'transform': 'scale(1)',
-        // },function () {
-        //     $indexBig.show();
-        //     $('#indexTip,#indexHeart,#indexCircleBox1').show();//#bigHide,#indexCircleBox1,
-        // });
         bCanGravity = true;
       }
     }
@@ -200,9 +183,9 @@ function orientation() {
 }
 
 function orientationListener(evt) {
-  // if (!bCanGravity) {
-  //   return;
-  // }
+  if (!bCanGravity) {
+    return;
+  }
 	if (!evt.gamma && !evt.beta) {
 		evt.gamma = (evt.x * (220 / Math.PI));
 		evt.beta = (evt.y * (220 / Math.PI));
