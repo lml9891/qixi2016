@@ -15,7 +15,7 @@
                 callback(data);
             },
             error: function (xhr, textStatus) {
-                console.log(xhr);
+                //console.log(xhr);
                 //alert(textStatus);
             }
         });
@@ -192,7 +192,7 @@
                         break;
                 }
             } else {
-                console.log(false);
+                //console.log(false);
             }
         });
     });

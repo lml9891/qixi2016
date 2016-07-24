@@ -40,7 +40,7 @@ function AddPageView(App, URL, OpenID, Remark) {
         },
         error: function (xhr, textStatus) {
             //console.log(xhr);
-            alert(textStatus);
+            //alert(textStatus);
         }
     });
 }
@@ -134,7 +134,7 @@ function _Log(URL, App, OpenID, Mobile, Type, SubType, Method, Parameter, Conten
         },
         error: function (xhr, textStatus) {
             //console.log(xhr);
-            alert(textStatus);
+            //alert(textStatus);
         }
     });
 }
