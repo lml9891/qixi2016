@@ -11,65 +11,18 @@ $(function () {
   var $goodHeart = $('.goodHeart');
   var $goodBg = $('#goodBg');
   var od = 'ontouchstart' in window ? 'tap':'click';
-
-  loading({
-    img: aLoadImgFirst,
-    showProgress: false,
-    loadingEnd: function () {//加载load图片完成
-      $loadingBg.addClass('showAnim').on('webkitAnimationEnd', function () {
-        $(this).off();
-        loading({
-          img: aLoadImg,
-          loadingEnd: function () {//本页所有图片完成
-            $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
-              $(this).hide().off();
-              //真正页面运行
-              $goodBg.show();
-              var  myScroll = new IScroll('#iWrapper', { mouseWheel: true, click: true })
-              $goodHeart.on(od, function () {
-                $goodHeart.removeClass('goodHeartOn');
-                var $next = $(this).next();
-                var nextNum = $next.html();
-                if (!$(this).data('true')) {
-                  $(this).addClass('goodHeartOn');
-                  $next.html(++nextNum);
-                  $(this).data('true',true)
-                }else {
-                  $next.html(--nextNum);
-                }
-              });
-            });
-          }
-        });
-      });
-
+  var  myScroll = new IScroll('#iWrapper', { mouseWheel: true, click: true })
+  $goodHeart.on(od, function () {
+    $goodHeart.removeClass('goodHeartOn');
+    var $next = $(this).next();
+    var nextNum = $next.html();
+    if (!$(this).data('true')) {
+      $(this).addClass('goodHeartOn');
+      $next.html(++nextNum);
+      $(this).data('true',true)
+    }else {
+      $next.html(--nextNum);
     }
   });
+
 });
-/**
- * img array 必须 加载的图片
- * showProgress Boolean 不必须 是否显示进度，默认显示(true)
- * loadingEnd function 必须 加载完执行的函数
-*/
-function loading(params) {
-  var iNow = 0,
-		  i = 0,
-      iLen = params.img.length,
-      showProgress  = typeof params.showProgress === 'undefined'?true:params.showProgress,
-      $loading = $('#loading');
-	for(i=0, l = iLen; i < l; i++){
-		(function(i){
-			var yImg = new Image();
-			yImg.onload = function(){
-				iNow++;
-        if (showProgress) {
-          $loading.text(parseInt(iNow/iLen * 100));
-        }
-				if(iNow === iLen){
-          typeof params.loadingEnd === 'function'&&params.loadingEnd();
-				}
-			};
-      yImg.src = params.img[i];
-		})(i)
-  }
-}

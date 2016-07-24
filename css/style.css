@@ -874,11 +874,11 @@ a{color:#000; text-decoration:none;}
 .armImg {
   width: 497px;
   height: 495px;
-}`
+}
 .arm1Img {
   background: url(../images/arm1Img1.jpg) no-repeat;
   background-size:100% 100%;
-}`
+}
 .arm1Img2 {
 	top:0;left:0;
 	transform: translate(0,10px);
