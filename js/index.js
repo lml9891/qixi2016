@@ -208,7 +208,11 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
     $('.ss').html(gamma / 180 * 140 -430 + "px " + beta / 180 * 140 + "px");
-		$('#floorBg').css("backgroundPosition", gamma / 180 * 140 -320 + "px " + beta / 180 * 140 + "px");
+		$('#floorBg').css("background-position", gamma / 180 * 140 -320 + "px " + beta / 180 * 140 + "px");
+    // $('#floorBg').css({
+    //   "left": gamma / 180 * 140 -320 + "px " ,
+    //   top: beta / 180 * 140 + "px"
+    // });
     $('#star1Bg,#star2Bg').css({
       left:gamma / 180 * 140,
       top:beta / 180 * 140
@@ -222,8 +226,8 @@ function orientationListener(evt) {
       top:beta / 180 * 140 + 296
     });
     $('#indexTip').css({
-      left:gamma / 180 * 140 + 224,
-      top:beta / 180 * 140 + 314
+      left:gamma / 180 * 140 + 314,
+      top:beta / 180 * 140 + 224
     });
 
 		this._lastGamma = gamma;
