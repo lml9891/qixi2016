@@ -67,29 +67,22 @@ a{color:#000; text-decoration:none;}
   padding-top: 635px;
   font-size: 28px;
 }
-.dsf {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 99999999;
-	font-size: 20px;
-	color: red;
-}
 /* 首页 */
 .indexBg {
 	background: url(../images/indexBg.jpg) no-repeat center center;
+	background-size: 1280px 1038px;
 	padding-top: 100px;
 	height: 1040px;
 	top:-100px
 }
 
 .floorBg {
-	background: url(../images/indexFloor.png) no-repeat -430px top;
+	background: url(../images/indexFloor.png) no-repeat -320px 90px;
 	height: 1040px;
 	left: 0;
 	width: 640px;
 	top: 0;
-	z-index: 2;
+	z-index: 4;
 	/*transition: background-position 0.5s linear,transform 0.5s linear;
 	-webkit-transition: background-position 0.5s linear,transform 0.5s linear;*/
 }/*background-position: -440px 110px;*/
@@ -149,37 +142,39 @@ a{color:#000; text-decoration:none;}
   }
 }
 .indexCar {
-	background: url(../images/indexCar.png) no-repeat 0 -820px;
-	background-size:100% 1334px;
-	top:720px;
+	background: url(../images/indexCar.png) no-repeat 0 -640px;
+	background-size:640px 1038px;
+	top:690px;
 	left: 0;
 	width: 640px;
 	height: 380px;
 }
+.indexTitle {
+	background: url(../images/indexCar.png) no-repeat;
+	background-size:640px 1038px;
+	top: 0;
+	left: 0;
+	width: 640px;
+	height: 200px;
+}
 .indexTip {
 	background: url(../images/indexCar.png) no-repeat;
-	background-size:100% 1334px;
-	top: -70px;
+	background-size:640px 1038px;
+	background-position: 0 -100px;
+	top: 0;
 	left: 0;
 	width: 640px;
 	height: 360px;
 	z-index: 3;
 }
-.indexTitle {
-	background: url(../images/indexTitle.png) no-repeat;
-	background-size:100% 100%;
-	top:0;
-	left: 0;
-	width: 640px;
-	height: 220px;
-}
+
 .indexHeart {
-	width: 100px;
-	height: 169px;
+	width: 87px;
+	height: 143px;
 	background: url(../images/indexHeart.png) no-repeat;
 	background-size:100% 100%;
-	left: 192px;
-  top: 346px;
+	left: 209px;
+  top: 386px;
 }
 .indexBig {
 	width: 38px;
@@ -191,6 +186,7 @@ a{color:#000; text-decoration:none;}
 	top: 356px;
   animation:indexBig 1s infinite linear;
   -webkit-animation:indexBig 1s infinite linear;
+	z-index: 4;
 }
 .indexBigAnim {
 	left: 332px;
@@ -296,14 +292,14 @@ a{color:#000; text-decoration:none;}
   }
 }
 .indexShip0 {
-	width: 365px;
-	height: 197px;
+	width: 312px;
+	height: 169px;
 	left: -365px;
-  top: 637px;
+  top: 610px;
 	background: url(../images/indexShip0.png) no-repeat;
 	background-size:100% 100%;
-	animation:indexShip0 10s infinite linear;
-	-webkit-animation:indexShip0 10s infinite linear;
+	/*animation:indexShip0 10s infinite linear;
+	-webkit-animation:indexShip0 10s infinite linear;*/
 }
 @-webkit-keyframes indexShip0{
 	0%{

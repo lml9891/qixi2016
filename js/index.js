@@ -16,7 +16,6 @@ $(function () {
     'images/indexShip1.png',
     'images/indexShip2.png',
     'images/indexShip3.png',
-    'images/indexTitle.png',
     'images/indexHeart.png',
     'images/indexBig.png',
     'images/indexView.jpg'
@@ -77,7 +76,7 @@ $(function () {
       $floorBg.css("backgroundPosition", -430 + "px " + 0 + "px")
       .animate({
         'background-position': '-350px 150px',
-        'transform': 'translate(0,120px) scale(1.9)',
+        'transform': 'scale(1.9)',
       }, function () {
         if (!isGoOut) {
           $indexBig.addClass('indexBigAnim').show();
@@ -92,19 +91,21 @@ $(function () {
     }
     function triggerBig() {
       bOne = !bOne;
-      bCanGravity = !bOne;
+
       if (bOne) {
         toBig();
+        bCanGravity = false;
       }else {
-        $indexBig.removeClass('indexBigAnim').show();
+        $indexBig.removeClass('indexBigAnim').hide();
         $('#indexView').removeClass('showAnim');
         $floorBg.animate({
           'background-position': '-430px top',
-      		'transform': 'translate(0,0) scale(1)',
+      		'transform': 'scale(1)',
         },function () {
+            $indexBig.hide();
             $('#bigHide,#indexCircleBox1,#indexHeart').show();
         });
-
+        bCanGravity = true;
       }
     }
   }
