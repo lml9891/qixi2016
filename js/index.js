@@ -158,9 +158,9 @@ function orientation() {
 }
 
 function orientationListener(evt) {
-  if (!bCanGravity) {
-    return;
-  }
+  // if (!bCanGravity) {
+  //   return;
+  // }
 	if (!evt.gamma && !evt.beta) {
 		evt.gamma = (evt.x * (180 / Math.PI));
 		evt.beta = (evt.y * (180 / Math.PI));
