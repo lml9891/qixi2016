@@ -207,7 +207,7 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-
+    $('.ss').html(gamma / 500 * 140 -430 + "px " + beta / 500 * 140 + "px");
 		$floorBg.css("backgroundPosition", gamma / 500 * 140 -430 + "px " + beta / 500 * 140 + "px");
     $indexHeart.css({
       left:gamma / 500 * 140 + 192,

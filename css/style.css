@@ -89,7 +89,14 @@ a{color:#000; text-decoration:none;}
   animation:floorBgAnim 0.5s linear forwards;
   -webkit-animation:floorBgAnim 0.5s linear forwards;
 }
-
+.ss {
+	top:0;
+	left: 0;
+	position: fixed;
+	z-index: 9999999;
+	font-size: 33px;
+	color: red;
+}
 @-webkit-keyframes floorBgAnim{
 	0%{
 		background-position: -430px top;
