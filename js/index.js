@@ -208,7 +208,8 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
     $('.ss').html(gamma / 180 * 140 -430 + "px " + beta / 180 * 140 + "px");
-		$('#floorBg').css("background-position", gamma / 180 * 140 -320 + "px " + beta / 180 * 140 + "px");
+		//$('#floorBg').css("background-position", gamma / 180 * 140 -320 + "px " + beta / 180 * 140 + "px");
+    $('#floorBg').get(0).style.backgroundPosition = gamma / 180 * 140 -320 + "px " + beta / 180 * 140 + "px"
     // $('#floorBg').css({
     //   "left": gamma / 180 * 140 -320 + "px " ,
     //   top: beta / 180 * 140 + "px"
