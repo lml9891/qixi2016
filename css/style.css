@@ -1042,7 +1042,7 @@ a{color:#000; text-decoration:none;}
 }
 /*扫光*/
 .slideShine {
-    background: #fff -webkit-linear-gradient(left, #fff, #111) 0 0 no-repeat;
+    background: #ccc -webkit-linear-gradient(left, #ccc, #fff) 0 0 no-repeat;
     -webkit-background-size: 80px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
