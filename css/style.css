@@ -86,22 +86,14 @@ a{color:#000; text-decoration:none;}
 }
 .floorBgImg {
 	background: url(../images/indexFloor.png?a=6) no-repeat center center;
-	height: 1040px;
-	width: 640px;
+	height: 1140px;
+	width: 1280px;
 	left: 0;
 	top: 0;
 }
 .floorBgAnim {
   animation:floorBgAnim 0.5s linear forwards;
   -webkit-animation:floorBgAnim 0.5s linear forwards;
-}
-.ss {
-	top:0;
-	left: 0;
-	position: fixed;
-	z-index: 9999999;
-	font-size: 33px;
-	color: red;
 }
 @-webkit-keyframes floorBgAnim{
 	0%{
