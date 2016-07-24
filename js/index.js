@@ -51,7 +51,7 @@ $(function () {
     }
   });
 
-  loadingTime = setTimeout(init,20000); //20秒若没loading完，自动进页面
+  loadingTime = setTimeout(init,60000); //60秒若没loading完，自动进页面
 
   function init() {
     $indexBg.show();
@@ -83,8 +83,8 @@ $(function () {
         'top': 807
       });
 
-      $floorBg.css("backgroundPosition", -320 + "px " + 0 + "px")
-      .css({
+      $floorBg.css({
+        "left", -320,
         'transform': 'scale(1.9)',
         'background-position': '-250px 180px'
       }).on('webkitTransitionEnd', function () {
@@ -130,7 +130,7 @@ $(function () {
         });
 
         $floorBg.css({
-          'background-position': '-320px top',
+          'left': -320,
       		'transform': 'scale(1)'
         }).on('webkitTransitionEnd', function () {
           $(this).off();
@@ -208,7 +208,11 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
 
-    $('#floorBgImg,#star1Bg,#star2Bg').css({
+    $('#floorBgImg').css({
+      left:gamma / 180 * 140 -320,
+      // top:beta / 180 * 140
+    });
+    $('#star1Bg,#star2Bg').css({
       left:gamma / 180 * 140,
       // top:beta / 180 * 140
     });

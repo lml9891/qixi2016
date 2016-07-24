@@ -88,7 +88,7 @@ a{color:#000; text-decoration:none;}
 	background: url(../images/indexFloor.png?a=6) no-repeat center center;
 	height: 1140px;
 	width: 1280px;
-	left: 0;
+	left: -320px;
 	top: 0;
 }
 .floorBgAnim {
