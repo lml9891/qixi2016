@@ -208,18 +208,22 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
     $('.ss').html(gamma / 180 * 140 -430 + "px " + beta / 180 * 140 + "px");
-		$('#floorBg').css("backgroundPosition", gamma / 180 * 140 -430 + "px " + beta / 180 * 140 + "px");
+		$('#floorBg').css("backgroundPosition", gamma / 180 * 140 -320 + "px " + beta / 180 * 140 + "px");
+    $('#star1Bg,#star2Bg').css({
+      left:gamma / 180 * 140,
+      top:beta / 180 * 140
+    });
     $('#indexHeart').css({
-      left:gamma / 180 * 140 + 192,
-      top:beta / 180 * 140 + 346
+      left:gamma / 180 * 140 + 209,
+      top:beta / 180 * 140 + 296
     });
     $('#indexBig').css({
       left:gamma / 180 * 140 + 258,
-      top:beta / 180 * 140 + 356
+      top:beta / 180 * 140 + 296
     });
     $('#indexTip').css({
-      left:gamma / 180 * 140,
-      top:beta / 180 * 140 - 70
+      left:gamma / 180 * 140 + 224,
+      top:beta / 180 * 140 + 314
     });
 
 		this._lastGamma = gamma;
