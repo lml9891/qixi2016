@@ -208,7 +208,7 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
 
-    $('#floorBgImg,#indexBg,#star1Bg,#star2Bg').css({
+    $('#floorBgImg,#star1Bg,#star2Bg').css({
       left:gamma / 180 * 140,
       // top:beta / 180 * 140
     });
