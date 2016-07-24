@@ -84,7 +84,7 @@ $(function () {
       });
 
       $floorBg.css({
-        "left", -320,
+        "left": -320,
         'transform': 'scale(1.9)',
         'background-position': '-250px 180px'
       }).on('webkitTransitionEnd', function () {
