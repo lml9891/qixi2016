@@ -83,6 +83,12 @@ $(function () {
         'top': 807
       });
 
+      $('#floorBgImg').css({
+        'transform': 'scale(1.9)',
+        left: -170,
+        top: 376
+      });
+
       $floorBg.css({
         "left": -320,
         'transform': 'scale(1.9)',
@@ -128,9 +134,14 @@ $(function () {
         $('.indexShip0').css({
           'top': 610
         });
+        $('#floorBgImg').css({
+          'transform': 'scale(1)',
+          left: -320,
+          top: 0
+        });
 
         $floorBg.css({
-          'left': -320,
+          'left': 0,
       		'transform': 'scale(1)'
         }).on('webkitTransitionEnd', function () {
           $(this).off();
@@ -188,9 +199,9 @@ function orientationListener(evt) {
   //   return;
   // }
 	if (!evt.gamma && !evt.beta) {
-		evt.gamma = (evt.x * (180 / Math.PI));
-		evt.beta = (evt.y * (180 / Math.PI));
-		evt.alpha = (evt.z * (180 / Math.PI));
+		evt.gamma = (evt.x * (220 / Math.PI));
+		evt.beta = (evt.y * (220 / Math.PI));
+		evt.alpha = (evt.z * (220 / Math.PI));
 	}
 
 	var gamma = evt.gamma;
@@ -209,24 +220,28 @@ function orientationListener(evt) {
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
 
     $('#floorBgImg').css({
-      left:gamma / 180 * 140 -320,
-      // top:beta / 180 * 140
+      left:gamma / 220 * 140 -320,
+      // top:beta / 220 * 140
     });
     $('#star1Bg,#star2Bg').css({
-      left:gamma / 180 * 140,
-      // top:beta / 180 * 140
+      left:gamma / 220 * 140,
+      // top:beta / 220 * 140
     });
     $('#indexHeart').css({
-      left:gamma / 180 * 140 + 209,
-      // top:beta / 180 * 140 + 296
+      left:gamma / 220 * 140 + 209,
+      // top:beta / 220 * 140 + 296
     });
     $('#indexBig').css({
-      left:gamma / 180 * 140 + 258,
-      // top:beta / 180 * 140 + 296
+      left:gamma / 220 * 140 + 258,
+      // top:beta / 220 * 140 + 296
     });
     $('#indexTip').css({
-      left:gamma / 180 * 140 + 314,
-      // top:beta / 180 * 140 + 224
+      left:gamma / 220 * 140 + 314,
+      // top:beta / 220 * 140 + 224
+    });
+    $('#indexCircleBox1').css({
+      left:gamma / 220 * 140 + 218,
+      // top:beta / 220 * 140 + 224
     });
 
 		this._lastGamma = gamma;

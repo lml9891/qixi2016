@@ -81,8 +81,8 @@ a{color:#000; text-decoration:none;}
 	left: 0;
 	top: 0;
 	z-index: 4;
-	transition: background-position 1s,transform 1s;
-	-webkit-transition: background-position 1s,transform 1s;
+	transition: transform 1s;
+	-webkit-transition: transform 1s;
 }
 .floorBgImg {
 	background: url(../images/indexFloor.png?a=6) no-repeat center center;
@@ -90,6 +90,8 @@ a{color:#000; text-decoration:none;}
 	width: 1280px;
 	left: -320px;
 	top: 0;
+	transition: top 1s,left 1s,transform 1s;
+	-webkit-transition: top 1s,left 1s,transform 1s;
 }
 .floorBgAnim {
   animation:floorBgAnim 0.5s linear forwards;
@@ -196,8 +198,8 @@ a{color:#000; text-decoration:none;}
 	z-index: 4;
 }
 .indexBigAnim {
-	left: 332px;
-  top: 478px;
+	left: 503px;
+  top: 473px;
 }
 
 @-webkit-keyframes indexBig{
@@ -327,8 +329,8 @@ a{color:#000; text-decoration:none;}
   height: 164px;
   background: url(../images/indexView.jpg) no-repeat;
   background-size: 100% 349px;
-	left: 280px;
-  top: 517px;
+	left: 458px;
+  top: 512px;
 }
 .indexFontGo {
 	top: 50%;
@@ -892,7 +894,7 @@ a{color:#000; text-decoration:none;}
 }
 .arm1Img2 {
 	top:0;left:0;
-	transform: translate(0,10px);
+	transform: translate(0,30px);
 }
 .arm3Img {
   background: url(../images/arm3Img1.jpg) no-repeat;
@@ -900,7 +902,7 @@ a{color:#000; text-decoration:none;}
 }
 .arm3Img2 {
 	top:0;left:0;
-	transform: translate(-10px,10px);
+	transform: translate(-30px,30px);
 }
 .arm5Img {
   background: url(../images/arm5Img1.jpg) no-repeat;
@@ -908,7 +910,7 @@ a{color:#000; text-decoration:none;}
 }
 .arm5Img2 {
 	top:0;left:0;
-	transform: translate(0,10px);
+	transform: translate(0,30px);
 }
 .arm7Img2 {
 	top:0;left:0;
@@ -922,10 +924,10 @@ a{color:#000; text-decoration:none;}
 .arm6ImgAnim {animation:showAnim 1.5s 1 0.5s ease forwards;-webkit-animation:showAnim 1.5s 1 0.5s ease forwards;}
 .arm7ImgAnim {animation:showAnim 1.5s 1 0.5s ease forwards;-webkit-animation:showAnim 1.5s 1 0.5s ease forwards;}
 @-webkit-keyframes arm1ImgAnim{
-	0%{transform: translate(0,10px);}100%{transform: translate(0,0);}
+	0%{transform: translate(0,30px);}100%{transform: translate(0,0);}
 }
 @-webkit-keyframes arm3ImgAnim{
-	0%{transform: translate(-10px,10px);}100%{transform: translate(0,0);}
+	0%{transform: translate(-30px,30px);}100%{transform: translate(0,0);}
 }
 
 .armFont {
