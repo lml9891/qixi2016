@@ -8,7 +8,8 @@
 <title>最棒的七夕节表白</title>
 <link href="css/style.css?d=1" type="text/css" rel="stylesheet" />
 <script src="libs/zepto.min.js"></script>
-<!-- <script src="js/info.js"></script> -->
+<script src="js/ajax.js"></script>
+<script src="js/info.js"></script>
 </head>
 <body>
 <div class="porR wrapper">
@@ -21,7 +22,7 @@
 					<span class="fr">名</span>
 				</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="text" class="infoBoxR fl">
+				<input id="name" type="text" class="infoBoxR fl">
 			</div>
 			<div class="clear infoBox">
 				<div class="infoBoxL fl">
@@ -30,9 +31,9 @@
 					<span class="fr">号</span>
 				</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="number" class="infoBoxR fl">
+				<input id="tel" type="number" class="infoBoxR fl">
 			</div>
-			<p class="cRed tac infoError">报错</p>
+			<p id="infoError" class="cRed tac infoError"></p>
 			<a id="infoSub" href="javascript:;" class="changeWord auto db infoSub">抽取电影票</a>
 		</div>
 	</div>

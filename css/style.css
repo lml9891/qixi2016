@@ -737,6 +737,9 @@ a{color:#000; text-decoration:none;}
   animation:carInAnim 2s infinite linear;
   -webkit-animation:carInAnim 2s infinite linear;
 }
+.carIn2 {
+	top: 782px;
+}
 .car {
   top:285px;
   left: 0;

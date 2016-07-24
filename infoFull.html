@@ -8,6 +8,7 @@
 <title>最棒的七夕节表白</title>
 <link href="css/style.css?d=1" type="text/css" rel="stylesheet" />
 <script src="libs/zepto.min.js"></script>
+<script src="js/ajax.js"></script>
 <script src="js/infoFull.js"></script>
 </head>
 <body>
@@ -21,7 +22,7 @@
 					<span class="fr">名</span>
 				</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="text" class="infoBoxR fl">
+				<input id="name" type="text" class="infoBoxR fl">
 			</div>
 			<div class="clear infoBox">
 				<div class="infoBoxL fl">
@@ -30,7 +31,7 @@
 					<span class="fr">号</span>
 				</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="number" class="infoBoxR fl">
+				<input id="tel" type="number" class="infoBoxR fl">
 			</div>
 			<div class="clear infoBox">
 				<div class="infoBoxL fl">
@@ -39,7 +40,12 @@
 					<span class="fr">商</span>
 				</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="number" class="infoBoxR fl">
+				<select id="dealer" class="infoBoxR fl">
+					<option value="0">请选择</option>
+					<option value="李小雄">李小雄</option>
+					<option value="李二逼">李二逼</option>
+					<option value="哞哞">哞哞</option>
+				</select>
 			</div>
 			<div class="clear infoBox">
 				<div class="infoBoxL fl">
@@ -49,14 +55,24 @@
 					<span class="fr">问</span>
 				</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="number" class="infoBoxR fl">
+				<select id="sales" class="infoBoxR fl">
+					<option value="0">请选择</option>
+					<option value="李小雄">李小雄</option>
+					<option value="李二逼">李二逼</option>
+					<option value="哞哞">哞哞</option>
+				</select>
 			</div>
 			<div class="clear infoBox">
 				<div class="infoBoxL fl">意向购车时间</div>
 				<span class="infoBoxLine tac fl">|</span>
-				<input type="number" class="infoBoxR fl">
+				<select id="time" class="infoBoxR fl">
+					<option value="0">请选择</option>
+					<option value="1">1个月内</option>
+					<option value="2">2个月内</option>
+					<option value="3">3个月内</option>
+				</select>
 			</div>
-			<p class="cRed tac infoError">报错</p>
+			<p id="infoError" class="cRed tac infoError"></p>
 			<a id="infoSub" href="javascript:;" class="changeWord auto db infoSub">抽取电影票</a>
 		</div>
 	</div>

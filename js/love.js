@@ -1,12 +1,25 @@
 $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
-
+  var $loveInp = $('#loveInp');
   $('#loveBtn').on(od, function () {//上传并抽取电影票点击事件
-    $('#lovepreview').show().addClass('showAnim').on('webkitAnimationEnd', function () {
-      $(this).off();
-      //文字跑马灯
-      autoTabFont();
+    var sLoveInpVal = $loveInp.val();
+    if (sLoveInpVal.length>30) {
+      $('#infoError').html('您输入的情话大于30字');
+      return;
+    }
+    add_love_content(sLoveInpVal,function (data) {
+      if (data.Success) {
+        $('#lovepreview').show().addClass('showAnim').on('webkitAnimationEnd', function () {
+          $(this).off();
+          //文字跑马灯
+          autoTabFont();
+          setTimeout(function () {
+            window.location.href = 'loveSuc.html';
+          },2000);
+        });
+      }
     });
+
   });
 });
 

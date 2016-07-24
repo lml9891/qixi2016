@@ -41,6 +41,11 @@ $(function () {
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
+              get_user_new_content(function (data) {
+                if (data.Success) {
+                  $('#indexFontGoContent').html(data.Message);
+                }
+              });
               //真正页面运行
               init();
             });

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script src="libs/zepto.min.js"></script>
+<script src="js/info2.js"></script>
+<script>
+    //获取用户最新表白
+    get_user_new_content(function (data) {
+        ////请求成功
+
+    });
+
+    //获取最新n条表白
+    get_contents(function (data) {
+        //请求成功
+
+    });
+
+    //点赞
+    add_like_count(3, function (data) {
+        //请求成功
+
+    });
+
+    //提交表白
+    add_love_content("我在测试提交表白", function (data) {
+        //请求成功
+    });
+    //填写手机号，抽取电影票
+    submit_userinfo_get_movieticket("刘涛", "13716170047", function (data) {
+        //请求成功
+        if (data.Success) {
+            switch (data.ReturnCode) {
+                case "000":
+                    //---中奖
+                    //电影票中奖码
+                    var Movie = data.Message;
+
+                    break;
+                case "001":
+                    //---已经中过奖
+
+                    break;
+                case "-001":
+                    //---未中奖
+                    break;
+            }
+        } else {
+            console.log(false);
+        }
+    });
+
+    //获取用户信息
+    get_userinfo(function (data) {
+        //请求成功
+
+    });
+
+    ////预约赏车
+    add_activity_customer_info("刘涛", "13716170047", "北京", "北京", "全新科鲁兹", "北京", "陈飞", "备注", function (data) {
+        //请求成功
+
+    })
+</script>
+<body>
+</body>
+</html>
