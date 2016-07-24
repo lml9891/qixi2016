@@ -75,28 +75,35 @@ $(function () {
 
       $('#indexTip,#indexHeart,#indexCircleBox1').hide();//#bigHide,#indexCircleBox1,
 
-      $('.indexCar').animate({
+      $('.indexCar').css({
         'left': 40,
         'top': 830
       });
-      $('.indexCar').animate({
-        'left': 40,
-        'top': 830
-      });
-      $('.indexShip,.indexShip0').animate({
+      $('.indexShip,.indexShip0').css({
         'top': 807
       });
 
       $floorBg.css("backgroundPosition", -320 + "px " + 0 + "px")
-      .animate({
+      .css({
         'transform': 'scale(1.9)',
         'background-position': '-250px 180px'
-      }, function () {
+      }).on('webkitTransitionEnd', function () {
+        $(this).off();
         if (!isGoOut) {
           $indexBig.addClass('indexBigAnim').show();
         }
         $('#indexView').addClass('showAnim');
       });
+
+      // .animate({
+      //   'transform': 'scale(1.9)',
+      //   'background-position': '-250px 180px'
+      // }, function () {
+      //   if (!isGoOut) {
+      //     $indexBig.addClass('indexBigAnim').show();
+      //   }
+      //   $('#indexView').addClass('showAnim');
+      // });
 
 
       //文字跑马灯
@@ -111,13 +118,32 @@ $(function () {
       }else {
         $indexBig.removeClass('indexBigAnim').hide();
         $('#indexView').removeClass('showAnim');
-        $floorBg.animate({
-          'background-position': '-320px top',
-      		'transform': 'scale(1)',
-        },function () {
-            $indexBig.show();
-            $('#indexTip,#indexHeart,#indexCircleBox1').show();//#bigHide,#indexCircleBox1,
+        $('.indexCar').css({
+          'left': 0,
+          'top': 720
         });
+        $('.indexShip').css({
+          'top': 637
+        });
+        $('.indexShip0').css({
+          'top': 610
+        });
+
+        $floorBg.css({
+          'background-position': '-320px top',
+      		'transform': 'scale(1)'
+        }).on('webkitTransitionEnd', function () {
+          $(this).off();
+          $indexBig.show();
+          $('#indexTip,#indexHeart,#indexCircleBox1').show();
+        });
+        // $floorBg.animate({
+        //   'background-position': '-320px top',
+      	// 	'transform': 'scale(1)',
+        // },function () {
+        //     $indexBig.show();
+        //     $('#indexTip,#indexHeart,#indexCircleBox1').show();//#bigHide,#indexCircleBox1,
+        // });
         bCanGravity = true;
       }
     }

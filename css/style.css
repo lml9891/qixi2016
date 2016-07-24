@@ -82,8 +82,8 @@ a{color:#000; text-decoration:none;}
 	width: 640px;
 	top: 0;
 	z-index: 4;
-	/*transition: background-position 0.5s linear,transform 0.5s linear;
-	-webkit-transition: background-position 0.5s linear,transform 0.5s linear;*/
+	transition: background-position 1s,transform 1s;
+	-webkit-transition: background-position 1s,transform 1s;
 }/*background-position: -440px 110px;*/
 .floorBgAnim {
   animation:floorBgAnim 0.5s linear forwards;
@@ -148,6 +148,8 @@ a{color:#000; text-decoration:none;}
 	width: 640px;
 	height: 380px;
 	z-index: 4;
+	transition:top 1s, left 1s;
+	-webkit-transition:top 1s, left 1s;
 }
 .indexTitle {
 	background: url(../images/indexCar.png) no-repeat;
@@ -272,6 +274,8 @@ a{color:#000; text-decoration:none;}
   top: 637px;
 	background: url(../images/indexShip1.png) no-repeat;
 	background-size:100% 100%;
+	transition:top 1s;
+	-webkit-transition:top 1s;
 }
 .indexShipAnim {
 	animation:indexShip 10s infinite linear;
@@ -301,6 +305,8 @@ a{color:#000; text-decoration:none;}
 	background-size:100% 100%;
 	animation:indexShip0 10s infinite linear;
 	-webkit-animation:indexShip0 10s infinite linear;
+	transition:top 1s;
+	-webkit-transition:top 1s;
 }
 @-webkit-keyframes indexShip0{
 	0%{
