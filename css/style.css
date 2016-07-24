@@ -70,7 +70,7 @@ a{color:#000; text-decoration:none;}
 /* 首页 */
 .indexBg {
 	background: url(../images/indexBg.jpg) no-repeat center top;
-	background-size: 1280px 1038px;
+	background-size: 1280px 1138px;
 	height: 1138px;
 	top:0
 }
@@ -155,15 +155,16 @@ a{color:#000; text-decoration:none;}
 	top: 0;
 	left: 0;
 	width: 640px;
-	height: 200px;
+	height: 160px;
 }
 .indexTip {
 	background: url(../images/indexCar.png) no-repeat;
 	background-size:640px 1038px;
-	top: 0;
-	left: 0;
-	width: 640px;
-	height: 360px;
+	background-position: -314px -174px;
+	top: 224px;
+	left: 314px;
+	width: 144px;
+	height: 118px;
 	z-index: 3;
 }
 
@@ -173,7 +174,7 @@ a{color:#000; text-decoration:none;}
 	background: url(../images/indexHeart.png) no-repeat;
 	background-size:100% 100%;
 	left: 209px;
-  top: 386px;
+  top: 296px;
 }
 .indexBig {
 	width: 38px;
@@ -182,7 +183,7 @@ a{color:#000; text-decoration:none;}
 	background: url(../images/indexBig.png) no-repeat center center;
 	background-size:38px 38px;
 	left: 258px;
-	top: 356px;
+	top: 296px;
   animation:indexBig 1s infinite linear;
   -webkit-animation:indexBig 1s infinite linear;
 	z-index: 4;
