@@ -513,7 +513,7 @@ a{color:#000; text-decoration:none;}
   background-size:100% 100%;
 }
 .loveFontGo {
-  top:585px;
+  top:525px;
   left:275px;
   width: 127px;
   height: 227px;
@@ -1050,4 +1050,14 @@ a{color:#000; text-decoration:none;}
     100% {
         background-position: 100% 100%;
     }
+}
+/* afterShare */
+.afterShareBtn {
+	background: url(../images/afterShareBtn.jpg) no-repeat;
+  background-size:100% 100%;
+  width: 260px;
+  height: 85px;
+  left:50%;
+	margin-left: -130px;
+  top:870px;
 }

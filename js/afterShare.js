@@ -1,23 +1,13 @@
 $(function () {
-  var od = 'ontouchstart' in window ? 'tap':'click';
-
-  $('#loveBtn').on(od, function () {//上传并抽取电影票点击事件
-    $('#lovepreview').show().addClass('showAnim').on('webkitAnimationEnd', function () {
-      $(this).off();
-      //文字跑马灯
-      autoTabFont();
-    });
-  });
+  //文字跑马灯
+  autoTabFont();
 });
-
-
 //文字跑马灯
 function autoTabFont() {
   var $loveFontGo = $('#loveFontGo');
   var $loveFontGoScroll = $('#loveFontGoScroll');
   var $loveFontGoContent = $('.loveFontGoContent');
   var loveFontGoHeight = $loveFontGo.height();
-    $loveFontGoContent.html($('#loveInp').val());//赋值
   var loveFontGoContentHeight = $loveFontGoContent.height();
   var iNow = 0;
 
