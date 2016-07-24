@@ -76,7 +76,7 @@ a{color:#000; text-decoration:none;}
 }
 
 .floorBg {
-	background: url(../images/indexFloor.png) no-repeat center center;
+	/*background: url(../images/indexFloor.png) no-repeat center center;*/
 	height: 1040px;
 	width: 640px;
 	left: 0;
@@ -90,6 +90,13 @@ a{color:#000; text-decoration:none;}
 	transition: background-position 1s,transform 1s;
 	-webkit-transition: background-position 1s,transform 1s;
 }/*background-position: -440px 110px;*/
+.floorBgImg {
+	background: url(../images/indexFloor.png) no-repeat center center;
+	height: 1040px;
+	width: 640px;
+	left: 0;
+	top: 0;
+}
 .floorBgAnim {
   animation:floorBgAnim 0.5s linear forwards;
   -webkit-animation:floorBgAnim 0.5s linear forwards;
