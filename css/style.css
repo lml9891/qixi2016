@@ -143,7 +143,7 @@ a{color:#000; text-decoration:none;}
 .indexCar {
 	background: url(../images/indexCar.png) no-repeat 0 -640px;
 	background-size:640px 1038px;
-	top:690px;
+	top:720px;
 	left: 0;
 	width: 640px;
 	height: 380px;
@@ -260,7 +260,8 @@ a{color:#000; text-decoration:none;}
 }
 .indexCircleBox3 {
 	left: 338px;
-	top: 926px;
+	top: 866px;
+	z-index: 4;
   animation:indexCircleBox 3s infinite linear 1s;
   -webkit-animation:indexCircleBox 3s infinite linear 1s;
 }
@@ -292,8 +293,8 @@ a{color:#000; text-decoration:none;}
   }
 }
 .indexShip0 {
-	width: 312px;
-	height: 169px;
+	width: 248px;/*312px;*/
+	height: 134px;/*169px;*/
 	left: -365px;
   top: 610px;
 	background: url(../images/indexShip0.png) no-repeat;
