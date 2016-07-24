@@ -1040,3 +1040,19 @@ a{color:#000; text-decoration:none;}
 @-webkit-keyframes hideLoopAnim{
 	0%{opacity:1;}50%{opacity:0;}100%{opacity:1;}
 }
+/*扫光*/
+.slideShine {
+    background: #fff -webkit-linear-gradient(left, #fff, #111) 0 0 no-repeat;
+    -webkit-background-size: 80px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+    -webkit-animation: slideShine 3s infinite;
+}
+@-webkit-keyframes slideShine {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
