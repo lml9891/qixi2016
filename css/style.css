@@ -49,6 +49,9 @@ a{color:#000; text-decoration:none;}
 }
 
 /* 公共 */
+body {
+	background: #000;
+}
 .indexWraper {
 	height:1040px;
 	overflow:hidden;
@@ -77,7 +80,7 @@ a{color:#000; text-decoration:none;}
 	/*background: url(../images/indexBg.jpg) no-repeat center top;*/
 	/*background-size: 1280px 1138px;*/
 	height: 1138px;
-	top:0
+	top:-1px;
 }
 
 .indexBgImg {
