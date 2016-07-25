@@ -44,6 +44,7 @@ $(function () {
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               $(this).hide().off();
+              $('#floorBgImg').attr('src',aLoadImg[1]);
               //真正页面运行
               get_user_new_content(function (data) {
                 if (data.Success) {
