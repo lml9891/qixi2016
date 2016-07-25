@@ -42,17 +42,17 @@ $(function () {
         loading({
           img: aLoadImg,
           loadingEnd: function () {//本页所有图片完成
-            $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
-              //真正页面运行
-              $('#floorBgImg').attr('src',aLoadImg[1]);
-              get_user_new_content(function (data) {
-                if (data.Success) {
+            get_user_new_content(function (data) {
+              if (data.Success) {
+                $indexBg.show();
+                $('#floorBgImg').attr('src',aLoadImg[1]);
+                $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
+                  //真正页面运行
                   $(this).hide().off();
-                  alert(aLoadImg[1])
                   $('#indexFontGoContent').html(data.Message);
-                }
-              });
-              init();
+                  init();
+                });
+              }
             });
           }
         });
@@ -64,7 +64,7 @@ $(function () {
   loadingTime = setTimeout(init,60000); //60秒若没loading完，自动进页面
 
   function init() {
-    $indexBg.show();
+
     //重力
     setTimeout(orientation, 300);
 
