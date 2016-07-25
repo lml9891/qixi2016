@@ -64,7 +64,7 @@ $(function () {
   function init() {
     $indexBg.show();
     //重力
-    orientation();
+    setTimeout(orientation, 300);
 
     //自动走
     autoMove();
@@ -227,43 +227,13 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-    $('.dafs').html(Math.abs(gamma>>0)+','+Math.abs(beta>>0)+','+Math.abs(alpha>>0));
-    iSpeed+=1;
-
+    if (iSpeed<10) {
+      iSpeed+=1;
+    }
 		this._lastGamma = gamma;
 		this._lastBeta = beta;
 	}
 };
-
-//文字跑马灯
-function autoTabFont() {
-  var $indexFontGo = $('#indexFontGo');
-  var $indexFontGoScroll = $('#indexFontGoScroll');
-  var $indexFontGoContent = $('.indexFontGoContent');
-  var indexFontGoHeight = $indexFontGo.height();
-  var indexFontGoContentHeight = $indexFontGoContent.height();
-  var iNow = 0;
-
-  if (indexFontGoContentHeight <= indexFontGoHeight) { //如果内容高度<=外面的高度
-    return ;
-  }
-
-  $indexFontGoScroll.append($indexFontGoContent.clone());
-
-  clearInterval(oAutoTime);
-  oAutoTime = setInterval(autoTabGo,10);
-
-  function autoTabGo() {
-    var indexFontGoScrollTop = $indexFontGoScroll.offset().top;
-    if (iNow > indexFontGoContentHeight) {
-      iNow = 0;
-    }else {
-      iNow++;
-    }
-    $indexFontGoScroll.css('top',-iNow);
-  }
-
-}
 
 //自动走
 function autoMove() {
@@ -273,21 +243,23 @@ function autoMove() {
   var $indexHeart = $('#indexHeart');
   var $indexTip = $('#indexTip');
   var $indexBig = $('#indexBig');
-  var gapTime = 100;
+  var gapTime = 50;
   var iNow = 0;
 
   var winWidth = $(window).width();
 
-  // clearInterval(time);
   moveFn();
   time = setInterval(moveFn, gapTime);
 
   function moveFn() {
+    // $('.dafs').html('iNow:'+iNow);
     if (iNow > 527) {
       clearInterval(time);
+      iNow = 527;
     }else {
       iNow+=iSpeed;
     }
+    // $('.dafs').html('i2Now:'+iNow);
     $bg.css({
       left: -iNow
     });
@@ -316,45 +288,33 @@ function autoMove() {
     }
   }
 
-  // time = setTimeout (moveFn, gapTime );
-  // moveFn();
-  // function moveFn(){
-  //   if (!bCanMove) {
-  //     clearTimeout(time);
-  //     return;
-  //   }
-  //   iPosX += iSpeed;
-  //
-  //   if (iPosX>527) {
-  //     clearTimeout(time);
-  //     bCanMove = false;
-  //   }
-  //   $starBg.css({
-  //     left: -iPosX
-  //   });
-  //   $bg.css({
-  //     left: 11-iPosX
-  //   });
-  //   if (548 - iPosX > 10) {
-  //     $indexCircleBox1.css({
-  //       left: 548 - iPosX
-  //     });
-  //   }
-  //   if (644 - iPosX > 10) {
-  //     $indexTip.css({
-  //       left: 644 - iPosX
-  //     });
-  //   }
-  //   if ( 540 - iPosX > 10) {
-  //     $indexHeart.css({
-  //       left: 540 - iPosX
-  //     });
-  //   }
-  //   if (579 - iPosX > 10) {
-  //     $indexBig.css({
-  //       left: 579 - iPosX
-  //     });
-  //   }
-  //   setTimeout (moveFn, gapTime );
-  // }
+}
+//文字跑马灯
+function autoTabFont() {
+  var $indexFontGo = $('#indexFontGo');
+  var $indexFontGoScroll = $('#indexFontGoScroll');
+  var $indexFontGoContent = $('.indexFontGoContent');
+  var indexFontGoHeight = $indexFontGo.height();
+  var indexFontGoContentHeight = $indexFontGoContent.height();
+  var iNow = 0;
+
+  if (indexFontGoContentHeight <= indexFontGoHeight) { //如果内容高度<=外面的高度
+    return ;
+  }
+
+  $indexFontGoScroll.append($indexFontGoContent.clone());
+
+  clearInterval(oAutoTime);
+  oAutoTime = setInterval(autoTabGo,10);
+
+  function autoTabGo() {
+    var indexFontGoScrollTop = $indexFontGoScroll.offset().top;
+    if (iNow > indexFontGoContentHeight) {
+      iNow = 0;
+    }else {
+      iNow++;
+    }
+    $indexFontGoScroll.css('top',-iNow);
+  }
+
 }
