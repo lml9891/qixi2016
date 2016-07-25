@@ -1,6 +1,8 @@
 var bCanGravity = true;
 var oAutoTime = null;
-
+var iSpeed = 1;
+var time = null;
+var bCanMove = true;
 $(function () {
 
   var aLoadImgFirst = [
@@ -29,6 +31,7 @@ $(function () {
   var $indexHeart = $('#indexHeart');
   var od = 'ontouchstart' in window ? 'tap':'click';
   var loadingTime = null;
+
 
   loading({
     img: aLoadImgFirst,
@@ -63,6 +66,9 @@ $(function () {
     //重力
     orientation();
 
+    //自动走
+    autoMove();
+
     var bOne = false;
 
     //点击放大镜
@@ -77,6 +83,9 @@ $(function () {
 
     function toBig(isGoOut) {
       bCanGravity = false;
+      clearTimeout(time);
+      bCanMove = false;
+
       $indexBig.hide();
 
       $('#indexTip,#indexHeart,#indexCircleBox1').hide();//#bigHide,#indexCircleBox1,
@@ -89,7 +98,11 @@ $(function () {
         'top': 807
       });
 
-      $('#floorBgImg').css('left',-320).addClass('floorBgImgIn');
+      $('#floorBgImg').css('left',-320);
+      $('#floorBgImg,#indexBgImg').addClass('floorBgImgIn');
+      $('#star2Bg,#star1Bg').removeClass('starBgOutAnim').addClass('starBgIn').on('webkitAnimationEnd', function () {
+        $(this).off().removeClass('starBgIn').addClass('starBgInAnim');
+      });
 
       $floorBg.css({
         'transform': 'scale(1.9)',
@@ -127,7 +140,15 @@ $(function () {
         $('.indexShip0').css({
           'top': 610
         });
-        $('#floorBgImg').removeClass('floorBgImgIn').addClass('floorBgImgOut').on('webkitAnimationEnd', function () {
+        $('#indexHeart').css('left',209);
+        $('#indexTip').css('left',314);
+        $('#indexCircleBox1').css('left',218);
+
+        $('#star1Bg,#star2Bg').removeClass('starBgInAnim').addClass('starBgOut');
+        setTimeout(function () {
+          $('#star1Bg,#star2Bg').off().removeClass('starBgOut').addClass('starBgOutAnim');
+        },1000);
+        $('#floorBgImg,#indexBgImg').removeClass('floorBgImgIn').addClass('floorBgImgOut').on('webkitAnimationEnd', function () {
           $(this).off().removeClass('floorBgImgOut');
         });
 
@@ -207,30 +228,7 @@ function orientationListener(evt) {
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
 
-    $('#floorBgImg').css({
-      left:gamma / 220 * 140 -320,
-      // top:beta / 220 * 140
-    });
-    $('#star1Bg,#star2Bg').css({
-      left:gamma / 220 * 140,
-      // top:beta / 220 * 140
-    });
-    $('#indexHeart').css({
-      left:gamma / 220 * 140 + 209,
-      // top:beta / 220 * 140 + 296
-    });
-    $('#indexBig').css({
-      left:gamma / 220 * 140 + 258,
-      // top:beta / 220 * 140 + 296
-    });
-    $('#indexTip').css({
-      left:gamma / 220 * 140 + 314,
-      // top:beta / 220 * 140 + 224
-    });
-    $('#indexCircleBox1').css({
-      left:gamma / 220 * 140 + 218,
-      // top:beta / 220 * 140 + 224
-    });
+    iSpeed+=1;
 
 		this._lastGamma = gamma;
 		this._lastBeta = beta;
@@ -265,4 +263,61 @@ function autoTabFont() {
     $indexFontGoScroll.css('top',-iNow);
   }
 
+}
+
+//自动走
+function autoMove() {
+  var $allMove = $('#star1Bg,#star2Bg,#floorBgImg,#indexBgImg');
+  var $indexShip0 = $('#indexShip0');
+  var $indexCircleBox1 = $('#indexCircleBox1');
+  var $indexHeart = $('#indexHeart');
+  var $indexTip = $('#indexTip');
+  var $indexBig = $('#indexBig');
+  var gapTime = 100;
+
+
+  var iPosX = 0;
+  var winWidth = $(window).width();
+  time = setTimeout (moveFn, gapTime );
+  function moveFn(){
+    if (!bCanMove) {
+      clearTimeout(time);
+      return;
+    }
+    iPosX += iSpeed;
+
+    if (iPosX>527) {
+      clearTimeout(time);
+      bCanMove = false;
+    }
+    $allMove.css({
+      left: -iPosX
+    });
+    if (370 - iPosX > 10) {
+      $indexShip0.css({
+        left: 370 - iPosX
+      });
+    }
+    if (548 - iPosX > 10) {
+      $indexCircleBox1.css({
+        left: 548 - iPosX
+      });
+    }
+    if (644 - iPosX > 10) {
+      $indexTip.css({
+        left: 644 - iPosX
+      });
+    }
+    if ( 530 - iPosX > 10) {
+      $indexHeart.css({
+        left: 530 - iPosX
+      });
+    }
+    if (579 - iPosX > 10) {
+      $indexBig.css({
+        left: 579 - iPosX
+      });
+    }
+    setTimeout (moveFn, gapTime );
+  }
 }
