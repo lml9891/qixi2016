@@ -16,9 +16,13 @@ $(function () {
       $.each(data.Data, function (i,k) {
         sHtml += '<li>'+
           '<p class="goodListL slideShine">'+ k.Content +'</p>'+
-          '<div class="goodListR">'+
-            '<div class="goodHeart changeWord">桃心</div>'+
-            '<p class="tac goodNum">'+ k.LoveCount +'</p>'+
+          '<div class="goodListR">';
+            if (k.IsClicked) {
+              sHtml += '<div class="goodHeart changeWord goodHeartOn">桃心</div>';
+            }else {
+              sHtml += '<div class="goodHeart changeWord">桃心</div>';
+            }
+            sHtml += '<p class="tac goodNum">'+ k.LoveCount +'</p>'+
           '</div>'+
         '</li>';
       });
@@ -37,12 +41,12 @@ $(function () {
       var $closest = $(this).closest('li');
 
       var nextNum = $next.html();
-      if (!$(this).data('true')) {
-        console.log(999);
+      var iNowItem = listData[$closest.index()];
+      if (!iNowItem.IsClicked) {
         $(this).addClass('goodHeartOn');
         $next.html(++nextNum);
         $(this).data('true',true);
-        add_like_count(listData[$closest.index()].ID,function (data) {
+        add_like_count(iNowItem.ID,function (data) {
           if (data.Success) {
             console.log(data);
           }
