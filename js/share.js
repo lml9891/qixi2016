@@ -214,7 +214,7 @@ function onloadFun() {
         },
         error: function (xhr, textStatus) {
             // alert(textStatus);
-            console.info(xhr);
+            //console.info(xhr);
         }
     });
 }
