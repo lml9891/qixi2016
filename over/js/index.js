@@ -1,6 +1,8 @@
 var bCanGravity = true;
 var oAutoTime = null;
-
+var iSpeed = 0.2;
+var time = null;
+var bCanMove = true;
 $(function () {
 
   var aLoadImgFirst = [
@@ -30,6 +32,7 @@ $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
   var loadingTime = null;
 
+
   loading({
     img: aLoadImgFirst,
     showProgress: false,
@@ -39,15 +42,17 @@ $(function () {
         loading({
           img: aLoadImg,
           loadingEnd: function () {//本页所有图片完成
-            $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
-              $(this).hide().off();
-              //真正页面运行
-              get_user_new_content(function (data) {
-                if (data.Success) {
+            get_user_new_content(function (data) {
+              if (data.Success) {
+                $indexBg.show();
+                $('#floorBgImg').attr('src',aLoadImg[1]);
+                $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
+                  //真正页面运行
+                  $(this).hide().off();
                   $('#indexFontGoContent').html(data.Message);
-                }
-              });
-              init();
+                  init();
+                });
+              }
             });
           }
         });
@@ -59,9 +64,12 @@ $(function () {
   loadingTime = setTimeout(init,60000); //60秒若没loading完，自动进页面
 
   function init() {
-    $indexBg.show();
+
     //重力
-    orientation();
+    setTimeout(orientation, 300);
+
+    //自动走
+    autoMove();
 
     var bOne = false;
 
@@ -77,6 +85,9 @@ $(function () {
 
     function toBig(isGoOut) {
       bCanGravity = false;
+      clearTimeout(time);
+      bCanMove = false;
+
       $indexBig.hide();
 
       $('#indexTip,#indexHeart,#indexCircleBox1').hide();//#bigHide,#indexCircleBox1,
@@ -89,7 +100,11 @@ $(function () {
         'top': 807
       });
 
-      $('#floorBgImg').css('left',-320).addClass('floorBgImgIn');
+      $('#floorBgImg').css('left',-320);
+      $('#floorBgImg,#indexBgImg').addClass('floorBgImgIn');
+      $('#star2Bg,#star1Bg').removeClass('starBgOutAnim').addClass('starBgIn').on('webkitAnimationEnd', function () {
+        $(this).off().removeClass('starBgIn').addClass('starBgInAnim');
+      });
 
       $floorBg.css({
         'transform': 'scale(1.9)',
@@ -127,7 +142,15 @@ $(function () {
         $('.indexShip0').css({
           'top': 610
         });
-        $('#floorBgImg').removeClass('floorBgImgIn').addClass('floorBgImgOut').on('webkitAnimationEnd', function () {
+        $('#indexHeart').css('left',209);
+        $('#indexTip').css('left',314);
+        $('#indexCircleBox1').css('left',218);
+
+        $('#star1Bg,#star2Bg').removeClass('starBgInAnim').addClass('starBgOut');
+        setTimeout(function () {
+          $('#star1Bg,#star2Bg').off().removeClass('starBgOut').addClass('starBgOutAnim');
+        },1000);
+        $('#floorBgImg,#indexBgImg').removeClass('floorBgImgIn').addClass('floorBgImgOut').on('webkitAnimationEnd', function () {
           $(this).off().removeClass('floorBgImgOut');
         });
 
@@ -206,37 +229,66 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-
-    $('#floorBgImg').css({
-      left:gamma / 220 * 140 -320,
-      // top:beta / 220 * 140
-    });
-    $('#star1Bg,#star2Bg').css({
-      left:gamma / 220 * 140,
-      // top:beta / 220 * 140
-    });
-    $('#indexHeart').css({
-      left:gamma / 220 * 140 + 209,
-      // top:beta / 220 * 140 + 296
-    });
-    $('#indexBig').css({
-      left:gamma / 220 * 140 + 258,
-      // top:beta / 220 * 140 + 296
-    });
-    $('#indexTip').css({
-      left:gamma / 220 * 140 + 314,
-      // top:beta / 220 * 140 + 224
-    });
-    $('#indexCircleBox1').css({
-      left:gamma / 220 * 140 + 218,
-      // top:beta / 220 * 140 + 224
-    });
-
+    iSpeed = 1;
 		this._lastGamma = gamma;
 		this._lastBeta = beta;
 	}
 };
 
+//自动走
+function autoMove() {
+  var $starBg = $('#star1Bg,#star2Bg');
+  var $bg = $('#floorBgImg,#indexBgImg');
+  var $indexCircleBox1 = $('#indexCircleBox1');
+  var $indexHeart = $('#indexHeart');
+  var $indexTip = $('#indexTip');
+  var $indexBig = $('#indexBig');
+  var gapTime = 50;
+  var iNow = 0;
+
+  var winWidth = $(window).width();
+
+  moveFn();
+  time = setInterval(moveFn, gapTime);
+
+  function moveFn() {
+    // $('.dafs').html('iNow:'+iNow);
+    if (iNow > 527) {
+      clearInterval(time);
+      iNow = 527;
+    }else {
+      iNow+=iSpeed;
+    }
+    // $('.dafs').html('i2Now:'+iNow);
+    $bg.css({
+      left: -iNow
+    });
+    $starBg.css({
+      left: -iNow
+    });
+    if (548 - iNow > 10) {
+      $indexCircleBox1.css({
+        left: 548 - iNow
+      });
+    }
+    if (644 - iNow > 10) {
+      $indexTip.css({
+        left: 644 - iNow
+      });
+    }
+    if ( 540 - iNow > 10) {
+      $indexHeart.css({
+        left: 530 - iNow
+      });
+    }
+    if (579 - iNow > 10) {
+      $indexBig.css({
+        left: 579 - iNow
+      });
+    }
+  }
+
+}
 //文字跑马灯
 function autoTabFont() {
   var $indexFontGo = $('#indexFontGo');
