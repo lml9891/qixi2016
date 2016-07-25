@@ -227,7 +227,7 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-
+    $('.dafs').html(Math.abs(gamma>>0)+','+Math.abs(beta>>0)+','+Math.abs(alpha>>0));
     iSpeed+=1;
 
 		this._lastGamma = gamma;
@@ -267,57 +267,94 @@ function autoTabFont() {
 
 //自动走
 function autoMove() {
-  var $allMove = $('#star1Bg,#star2Bg,#floorBgImg,#indexBgImg');
-  var $indexShip0 = $('#indexShip0');
+  var $starBg = $('#star1Bg,#star2Bg');
+  var $bg = $('#floorBgImg,#indexBgImg');
   var $indexCircleBox1 = $('#indexCircleBox1');
   var $indexHeart = $('#indexHeart');
   var $indexTip = $('#indexTip');
   var $indexBig = $('#indexBig');
   var gapTime = 100;
+  var iNow = 0;
 
-
-  var iPosX = 0;
   var winWidth = $(window).width();
-  time = setTimeout (moveFn, gapTime );
-  function moveFn(){
-    if (!bCanMove) {
-      clearTimeout(time);
-      return;
-    }
-    iPosX += iSpeed;
 
-    if (iPosX>527) {
-      clearTimeout(time);
-      bCanMove = false;
+  // clearInterval(time);
+  moveFn();
+  time = setInterval(moveFn, gapTime);
+
+  function moveFn() {
+    if (iNow > 527) {
+      clearInterval(time);
+    }else {
+      iNow+=iSpeed;
     }
-    $allMove.css({
-      left: -iPosX
+    $bg.css({
+      left: -iNow
     });
-    if (370 - iPosX > 10) {
-      $indexShip0.css({
-        left: 370 - iPosX
-      });
-    }
-    if (548 - iPosX > 10) {
+    $starBg.css({
+      left: -iNow
+    });
+    if (548 - iNow > 10) {
       $indexCircleBox1.css({
-        left: 548 - iPosX
+        left: 548 - iNow
       });
     }
-    if (644 - iPosX > 10) {
+    if (644 - iNow > 10) {
       $indexTip.css({
-        left: 644 - iPosX
+        left: 644 - iNow
       });
     }
-    if ( 530 - iPosX > 10) {
+    if ( 540 - iNow > 10) {
       $indexHeart.css({
-        left: 530 - iPosX
+        left: 530 - iNow
       });
     }
-    if (579 - iPosX > 10) {
+    if (579 - iNow > 10) {
       $indexBig.css({
-        left: 579 - iPosX
+        left: 579 - iNow
       });
     }
-    setTimeout (moveFn, gapTime );
   }
+
+  // time = setTimeout (moveFn, gapTime );
+  // moveFn();
+  // function moveFn(){
+  //   if (!bCanMove) {
+  //     clearTimeout(time);
+  //     return;
+  //   }
+  //   iPosX += iSpeed;
+  //
+  //   if (iPosX>527) {
+  //     clearTimeout(time);
+  //     bCanMove = false;
+  //   }
+  //   $starBg.css({
+  //     left: -iPosX
+  //   });
+  //   $bg.css({
+  //     left: 11-iPosX
+  //   });
+  //   if (548 - iPosX > 10) {
+  //     $indexCircleBox1.css({
+  //       left: 548 - iPosX
+  //     });
+  //   }
+  //   if (644 - iPosX > 10) {
+  //     $indexTip.css({
+  //       left: 644 - iPosX
+  //     });
+  //   }
+  //   if ( 540 - iPosX > 10) {
+  //     $indexHeart.css({
+  //       left: 540 - iPosX
+  //     });
+  //   }
+  //   if (579 - iPosX > 10) {
+  //     $indexBig.css({
+  //       left: 579 - iPosX
+  //     });
+  //   }
+  //   setTimeout (moveFn, gapTime );
+  // }
 }

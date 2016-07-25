@@ -104,8 +104,14 @@ a{color:#000; text-decoration:none;}
 	width: 1280px;
 	left: 11px;/*-320px;*/
 	top: 0;
-	/*transition: top 1s,left 1s,transform 1s;*/
-	/*-webkit-transition: top 1s,left 1s,transform 1s;*/
+}
+.dafs {
+	left:0;
+	position: absolute;
+	top: 0;
+	font-size: 20px;
+	color: red;
+	z-index: 9999999999;
 }
 .floorBgImgIn {
 	animation:floorBgImgIn 1s 1 forwards;
@@ -429,6 +435,10 @@ a{color:#000; text-decoration:none;}
 	width: 100%;
 	word-break: break-all;
 }
+/*.star1Bg,.star2Bg,.floorBgImg,.indexBgImg,.indexShip0,.indexCircleBox1,.indexHeart,.indexTip,.indexBig {
+	transition: left 1s;
+	-webkit-transition: left 1s;
+}*/
 /*点赞 start*/
 .goodBg {
 	background: url(../images/stars.jpg) no-repeat center top;
