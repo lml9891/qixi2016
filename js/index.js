@@ -1,6 +1,6 @@
 var bCanGravity = true;
 var oAutoTime = null;
-var iSpeed = 1;
+var iSpeed = 0.2;
 var time = null;
 var bCanMove = true;
 $(function () {
@@ -44,10 +44,11 @@ $(function () {
           loadingEnd: function () {//本页所有图片完成
             $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
               //真正页面运行
+              $('#floorBgImg').attr('src',aLoadImg[1]);
               get_user_new_content(function (data) {
                 if (data.Success) {
                   $(this).hide().off();
-                  $('#floorBgImg').attr('src',aLoadImg[1]);
+                  alert(aLoadImg[1])
                   $('#indexFontGoContent').html(data.Message);
                 }
               });
@@ -228,9 +229,7 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-    if (iSpeed<3) {
-      iSpeed+=1;
-    }
+    iSpeed = 1;
 		this._lastGamma = gamma;
 		this._lastBeta = beta;
 	}

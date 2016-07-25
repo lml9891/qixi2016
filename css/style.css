@@ -211,6 +211,16 @@ body {
 		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
   }
 }
+
+@-webkit-keyframes starBgOut{
+	0%{
+		transform: scale(1.9) translate3D(80px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+  }100%{
+	transform: scale(1) translate3D(0,0,0);
+	-webkit-transform: scale(1) translate3D(0,0,0);
+  }
+}
 .starBgOut {
 	animation:starBgOut 1s 1 forwards;
 	-webkit-animation:starBgOut 1s 1 forwards;
