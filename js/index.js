@@ -228,7 +228,7 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-    if (iSpeed<5) {
+    if (iSpeed<3) {
       iSpeed+=1;
     }
 		this._lastGamma = gamma;
