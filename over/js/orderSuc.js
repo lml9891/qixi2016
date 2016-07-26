@@ -1,3 +1,4 @@
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
 
@@ -18,3 +19,4 @@ $(function () {
   }
 
 });
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

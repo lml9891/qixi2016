@@ -26,6 +26,10 @@ $(function () {
     $('#arm'+ iNow +'Font').removeClass('armsFontIn');
     $('#arm'+ iNow +'Img2').removeClass('arm'+ iNow +'ImgAnim');
   });
+
+  $('#carLink').on(od,function () {
+    window.location.href = 'infoFull.html';
+  });
   // musicFn();
 
   function musicFn() {
@@ -42,3 +46,4 @@ $(function () {
     });
   }
 });
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

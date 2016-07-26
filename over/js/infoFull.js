@@ -25,8 +25,13 @@ $(function () {
           }
         });
       }
-      $name.val(data.Data.RealName);
-      $tel.val(data.Data.Mobile);
+      if (data.ReturnCode === '-001') {
+        $name.attr('placeholder','请输入您的电话');
+        $name.attr('placeholder','请输入您的名字');
+      }else {
+        $name.val(data.Data.Mobile);
+        $name.val(data.Data.RealName);
+      }
       $infoSub.on(od, function () {
         var sTimeVal = $time.val();
         var sSalesVal = $sales.val();
@@ -48,7 +53,7 @@ $(function () {
         }
 
         add_activity_customer_info(sNameVal,sTelVal,data.Data.ProvinceName,data.Data.CityName,data.Data.CarSeries,sDealerVal,sSalesVal,sTimeVal, function (data) {
-          if (data.ReturnCode === '000') {
+          if (data.Success) {
             window.location.href = 'orderSuc.html';
           }
         });
@@ -57,3 +62,4 @@ $(function () {
     }
   });
 });
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

@@ -18,7 +18,7 @@ $(function () {
       }
     });
   }
-  
+
 });
 //文字跑马灯
 function autoTabFont() {
@@ -48,3 +48,4 @@ function autoTabFont() {
   }
 
 }
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

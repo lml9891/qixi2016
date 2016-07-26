@@ -1,6 +1,8 @@
 $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
   var $loveInp = $('#loveInp');
+  var $loveFrom = $('#loveFrom');
+  var $loveTo = $('#loveTo');
   // musicFn();
 
   function musicFn() {
@@ -17,13 +19,28 @@ $(function () {
     });
   }
   $('#loveBtn').on(od, function () {//上传并抽取电影票点击事件
+    var sLoveFromVal = $loveFrom.val();
+    var sLoveToVal = $loveTo.val();
     var sLoveInpVal = $loveInp.val();
-    if (sLoveInpVal.length>30) {
-      $('#infoError').html('您输入的情话大于30字');
+    if (sLoveFromVal.length<=0) {
+      $('#infoError').html('From不能为空');
+      return;
+    }
+    if (sLoveInpVal.length>14) {
+      $('#infoError').html('您输入的情话大于14字');
+      return;
+    }
+    
+    if (sLoveInpVal.length<3) {
+      $('#infoError').html('您输入的情话小于3字');
       return;
     }
     if (sLoveInpVal.length<=0) {
       $('#infoError').html('上传情话不能为空');
+      return;
+    }
+    if (sLoveToVal.length<=0) {
+      $('#infoError').html('To不能为空');
       return;
     }
     add_love_content(sLoveInpVal,function (data) {
@@ -72,3 +89,4 @@ function autoTabFont() {
   }
 
 }
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

@@ -1,4 +1,4 @@
-var bCanGravity = true;
+var bCanGravity = false;
 var oAutoTime = null;
 var iSpeed = 0.2;
 var time = null;
@@ -20,6 +20,8 @@ $(function () {
     'images/indexShip3.png',
     'images/indexHeart.png',
     'images/indexBig.png',
+    'images/indexPause.png',
+    'images/indexPlay.png',
     'images/indexView.jpg'
   ];
   var $loadingBg = $('#loadingBg');
@@ -64,7 +66,7 @@ $(function () {
   loadingTime = setTimeout(init,60000); //60秒若没loading完，自动进页面
 
   function init() {
-    // musicFn();
+    musicFn();
 
     function musicFn() {
       var $music = $('#music');
@@ -74,8 +76,10 @@ $(function () {
       $play.on(od, function () {
         if (audio.paused) {
           audio.play();
+          $play.removeClass('musicOn');
         }else {
           audio.pause();
+          $play.addClass('musicOn');
         }
       });
     }
@@ -114,7 +118,7 @@ $(function () {
         'top': 807
       });
 
-      $('#floorBgImg').css('left',-320);
+      $('#floorBgImg').css('left',-240);
       $('#floorBgImg,#indexBgImg').addClass('floorBgImgIn');
       $('#star2Bg,#star1Bg').removeClass('starBgOutAnim').addClass('starBgIn').on('webkitAnimationEnd', function () {
         $(this).off().removeClass('starBgIn').addClass('starBgInAnim');
@@ -156,9 +160,9 @@ $(function () {
         $('.indexShip0').css({
           'top': 610
         });
-        $('#indexHeart').css('left',209);
-        $('#indexTip').css('left',314);
-        $('#indexCircleBox1').css('left',218);
+        $('#indexHeart').css('left',290);
+        $('#indexTip').css('left',404);
+        $('#indexCircleBox1').css('left',338);
 
         $('#star1Bg,#star2Bg').removeClass('starBgInAnim').addClass('starBgOut');
         setTimeout(function () {
@@ -175,7 +179,7 @@ $(function () {
         }).on('webkitTransitionEnd', function () {
           $(this).off();
           $indexBig.css({
-            left: 258,
+            left: 339,
             top: 297
           }).show();
           $('#indexTip,#indexHeart,#indexCircleBox1').show();
@@ -243,7 +247,24 @@ function orientationListener(evt) {
 	beta = beta.toFixed(1);
 	alpha = alpha.toFixed(1);
 	if (this._lastGamma != gamma || this._lastBeta != beta) {
-    iSpeed = 1;
+    $('#floorBgImg').css({
+      left:gamma / 220 * 140 - 240
+    });
+    $('#star1Bg,#star2Bg').css({
+      left:gamma / 220 * 140 - 240
+    });
+    $('#indexHeart').css({
+      left:gamma / 220 * 140 + 530 - 240
+    });
+    $('#indexBig').css({
+      left:gamma / 220 * 140 + 579 - 240
+    });
+    $('#indexTip').css({
+      left:gamma / 220 * 140 + 664 - 240
+    });
+    $('#indexCircleBox1').css({
+      left:gamma / 220 * 140 + 548 - 240
+    });
 		this._lastGamma = gamma;
 		this._lastBeta = beta;
 	}
@@ -257,7 +278,7 @@ function autoMove() {
   var $indexHeart = $('#indexHeart');
   var $indexTip = $('#indexTip');
   var $indexBig = $('#indexBig');
-  var gapTime = 50;
+  var gapTime = 1;
   var iNow = 0;
 
   var winWidth = $(window).width();
@@ -267,9 +288,10 @@ function autoMove() {
 
   function moveFn() {
     // $('.dafs').html('iNow:'+iNow);
-    if (iNow > 527) {
+    if (iNow > 240) {
       clearInterval(time);
-      iNow = 527;
+      bCanGravity = true;
+      iNow = 240;
     }else {
       iNow+=iSpeed;
     }
@@ -332,3 +354,5 @@ function autoTabFont() {
   }
 
 }
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
