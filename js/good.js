@@ -29,7 +29,7 @@ $(function () {
       });
       $('#goodList').append(sHtml);
       addHeart();
-      musicFn();
+      // musicFn();
 
     }
   });

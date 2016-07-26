@@ -9,8 +9,7 @@ $(function () {
     'images/carIn.png',
     'images/car1.png',
     'images/car2.png',
-    'images/car3.png',
-    'images/car4.png'
+    'images/car3.png'
   ];
   var $loadingBg = $('#loadingBg');
   var $carBg = $('#carBg');
@@ -20,7 +19,7 @@ $(function () {
   //真正页面运行
   $('#carBg').show();
   jq360();
-  musicFn();
+  // musicFn();
 
   function musicFn() {
     var $music = $('#music');
@@ -69,7 +68,7 @@ function loading(params) {
 
 function jq360(){
 	var c_i = 1;
-	var iAllNum = 4;
+	var iAllNum = 3;
 	var c1=new Array();
 	//创建数组，i的数量是图片的总数；进行for循环。
 	for(var i=1;i<=iAllNum;i++){
@@ -124,10 +123,10 @@ function jq360(){
 			finalCoord.y = event.targetTouches[0].pageY;
 
 			//当横向滑动距离大于5时，则判断为有效滑动并执行向左滑动的方法。反之则向向右滑动。
-			if(finalCoord.x - shiftCoord.x > 20){
+			if(finalCoord.x - shiftCoord.x > 30){
 				showPicLeft();
 				shiftCoord.x = finalCoord.x;
-			}else if(finalCoord.x - shiftCoord.x < -20){
+			}else if(finalCoord.x - shiftCoord.x < -30){
 				showPicRight();
 				shiftCoord.x = finalCoord.x;
 		   }

@@ -2,7 +2,7 @@ $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
   $('#winCode').html(localStorage.WINCODE);
 
-  musicFn();
+  // musicFn();
 
   function musicFn() {
     var $music = $('#music');

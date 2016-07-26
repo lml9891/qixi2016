@@ -1,7 +1,7 @@
 $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
 
-  musicFn();
+  // musicFn();
 
   function musicFn() {
     var $music = $('#music');

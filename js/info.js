@@ -4,7 +4,7 @@ $(function () {
   var $infoError = $('#infoError');
   var $tel = $('#tel');
   var od = 'ontouchstart' in window ? 'tap':'click';
-  musicFn();
+  // musicFn();
 
   function musicFn() {
     var $music = $('#music');

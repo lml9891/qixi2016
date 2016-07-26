@@ -63,6 +63,12 @@ body {
   left:50%;
   margin-left: -320px;
 }
+.music {
+	font-size: 40px;
+	color:red;
+	left: 0;
+	top: 0;
+}
 
 /* loading */
 .loadingBg {
@@ -247,6 +253,36 @@ body {
 	transition:top 1s, left 1s;
 	-webkit-transition:top 1s, left 1s;
 }
+.indexCar1 {
+	width: 49px;
+	height: 48px;
+	background: url(../images/indexCar1.png) no-repeat;
+	background-size: 100% 100%;
+	left:415px;
+	top: 200px;
+  animation:indexCar1 2.5s infinite linear;
+  -webkit-animation:indexCar1 2.5s infinite linear;
+}
+.indexCar2 {
+	width: 49px;
+	height: 48px;
+	background: url(../images/indexCar2.png) no-repeat;
+	background-size: 100% 100%;
+	left:160px;
+	top: 190px;
+  animation:indexCar1 2.5s infinite linear;
+  -webkit-animation:indexCar1 2.5s infinite linear;
+}
+
+@-webkit-keyframes indexCar1{
+	0%{
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+  }100%{
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+  }
+}
 .indexTitle {
 	background: url(../images/indexCar.png) no-repeat;
 	background-size:640px 1038px;
@@ -338,26 +374,26 @@ body {
 	-ms-border-radius: 31px;
 	background: rgba(255,255,255,0.5);
 	border:2px solid #fff;
+  animation:indexCircleBox 3s infinite linear;
+  -webkit-animation:indexCircleBox 3s infinite linear;
 }
 .indexCircleBox1 {
 	left: 548px;/*218px;*/
 	top: 496px;
-  animation:indexCircleBox 3s infinite linear;
-  -webkit-animation:indexCircleBox 3s infinite linear;
 	z-index: 5;
 }
 .indexCircleBox2 {
 	left: 130px;
   top: 40px;
-  animation:indexCircleBox 3s infinite linear 0.5s;
-  -webkit-animation:indexCircleBox 3s infinite linear 0.5s;
+  /*animation:indexCircleBox 3s infinite linear 0.5s;*/
+  /*-webkit-animation:indexCircleBox 3s infinite linear 0.5s;*/
 }
 .indexCircleBox3 {
 	left: 338px;
 	top: 866px;
 	z-index: 4;
-  animation:indexCircleBox 3s infinite linear 1s;
-  -webkit-animation:indexCircleBox 3s infinite linear 1s;
+  /*animation:indexCircleBox 3s infinite linear 1s;*/
+  /*-webkit-animation:indexCircleBox 3s infinite linear 1s;*/
 }
 .indexShip {
 	width: 677px;

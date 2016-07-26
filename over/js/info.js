@@ -4,13 +4,24 @@ $(function () {
   var $infoError = $('#infoError');
   var $tel = $('#tel');
   var od = 'ontouchstart' in window ? 'tap':'click';
+  // musicFn();
+
+  function musicFn() {
+    var $music = $('#music');
+    var $audio = $('#audio');
+    var audio = $audio.get(0);
+    var $play = $('#play');
+    $play.on(od, function () {
+      if (audio.paused) {
+        audio.play();
+      }else {
+        audio.pause();
+      }
+    });
+  }
   $infoSub.on(od, function () {
     var sTel = $tel.val();
     var sName = $name.val();
-    // if (!/^((1[3,5,8][0-9])|(14[5,7])|(17[0,1,6,7,8]))\d{8}$/.test(sTel)) {
-    //   $infoError.html('手机号有误');
-    //   return;
-    // }
     submit_userinfo_get_movieticket(sName,sTel,function (data) {
       if (data.Success) {
         if (data.ReturnCode === '001') {

@@ -741,13 +741,19 @@ body {
   line-height: 72px;
   height: 72px;
 }
+.infoBoxL2 {
+	margin-top: 72px;
+}
 .infoBoxLine {
   width: 41px;
   font-size: 24px;
   line-height: 72px;
   height: 72px;
 }
-.infoBoxR {
+.infoBoxLine2 {
+	margin-top: 72px;
+}
+.infoBoxR,.infoSel {
   width: 270px;
   font-size: 24px;
   line-height: 72px;
@@ -755,6 +761,15 @@ body {
   height: 72px;
 	background: #fff;
 }
+.infoBoxR2 {
+  width: 270px;
+  font-size: 24px;
+  line-height: 72px;
+  color: #ccc;
+  height: 230px;
+	background: #fff;
+}
+
 .infoSpan1 {
   padding-left: 35px;
 }
@@ -770,6 +785,9 @@ body {
   background-size:100% 100%;
   width: 240px;
   height: 73px;
+}
+.infoSub2 {
+	margin-top: 10px;
 }
 .infoSpan2 {
   padding-left: 17px;

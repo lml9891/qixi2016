@@ -10,7 +10,7 @@ $(function () {
     var od = 'ontouchstart' in window ? 'tap':'click';
 
     if (data.Success) {
-      musicFn();
+      // musicFn();
 
       function musicFn() {
         var $music = $('#music');
@@ -25,8 +25,17 @@ $(function () {
           }
         });
       }
-      $name.val(data.Data.RealName);
-      $tel.val(data.Data.Mobile);
+      
+      if (typeof data.Data.RealName !== 'undefined') {
+        $name.attr('placeholder','请输入您的名字');
+      }else {
+        $name.val(data.Data.RealName);
+      }
+      if (typeof data.Data.Mobile !== 'undefined') {
+        $name.attr('placeholder','请输入您的电话');
+      }else {
+        $name.val(data.Data.Mobile);
+      }
       $infoSub.on(od, function () {
         var sTimeVal = $time.val();
         var sSalesVal = $sales.val();

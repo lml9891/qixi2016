@@ -26,7 +26,7 @@ $(function () {
     $('#arm'+ iNow +'Font').removeClass('armsFontIn');
     $('#arm'+ iNow +'Img2').removeClass('arm'+ iNow +'ImgAnim');
   });
-  musicFn();
+  // musicFn();
 
   function musicFn() {
     var $music = $('#music');

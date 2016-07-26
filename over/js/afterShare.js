@@ -1,6 +1,24 @@
 $(function () {
+  var od = 'ontouchstart' in window ? 'tap':'click';
+
   //文字跑马灯
   autoTabFont();
+  musicFn();
+
+  function musicFn() {
+    var $music = $('#music');
+    var $audio = $('#audio');
+    var audio = $audio.get(0);
+    var $play = $('#play');
+    $play.on(od, function () {
+      if (audio.paused) {
+        audio.play();
+      }else {
+        audio.pause();
+      }
+    });
+  }
+  
 });
 //文字跑马灯
 function autoTabFont() {

@@ -21,7 +21,7 @@ $(function () {
   $(document).on(od, function () {
     $loveSucSun.removeClass('showAnim').hide();
   });
-  musicFn();
+  // musicFn();
 
   function musicFn() {
     var $music = $('#music');

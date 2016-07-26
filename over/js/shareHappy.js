@@ -169,6 +169,7 @@ function onloadFun() {
             });
 
             wx.ready(function () {
+                document.getElementById('audio').play();
                 wx.onMenuShareAppMessage({
                     title: wxtitle,
                     desc: wxdesc,

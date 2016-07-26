@@ -64,7 +64,7 @@ $(function () {
   loadingTime = setTimeout(init,60000); //60秒若没loading完，自动进页面
 
   function init() {
-    musicFn();
+    // musicFn();
 
     function musicFn() {
       var $music = $('#music');
