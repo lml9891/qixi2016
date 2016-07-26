@@ -7,6 +7,7 @@ $(function () {
     'images/stars.jpg',
     'images/good.png'
   ];
+  var od = 'ontouchstart' in window ? 'tap':'click';
   var listData = [];
 
   get_contents(function (data) {
@@ -28,8 +29,23 @@ $(function () {
       });
       $('#goodList').append(sHtml);
       addHeart();
+      musicFn();
+
     }
   });
+  function musicFn() {
+    var $music = $('#music');
+    var $audio = $('#audio');
+    var audio = $audio.get(0);
+    var $play = $('#play');
+    $play.on(od, function () {
+      if (audio.paused) {
+        audio.play();
+      }else {
+        audio.pause();
+      }
+    });
+  }
   function addHeart() {
     var $loadingBg = $('#loadingBg');
     var $goodHeart = $('.goodHeart');

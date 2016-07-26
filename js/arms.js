@@ -26,5 +26,19 @@ $(function () {
     $('#arm'+ iNow +'Font').removeClass('armsFontIn');
     $('#arm'+ iNow +'Img2').removeClass('arm'+ iNow +'ImgAnim');
   });
+  musicFn();
 
+  function musicFn() {
+    var $music = $('#music');
+    var $audio = $('#audio');
+    var audio = $audio.get(0);
+    var $play = $('#play');
+    $play.on(od, function () {
+      if (audio.paused) {
+        audio.play();
+      }else {
+        audio.pause();
+      }
+    });
+  }
 });

@@ -1,6 +1,21 @@
 $(function () {
   var od = 'ontouchstart' in window ? 'tap':'click';
   var $loveInp = $('#loveInp');
+  musicFn();
+
+  function musicFn() {
+    var $music = $('#music');
+    var $audio = $('#audio');
+    var audio = $audio.get(0);
+    var $play = $('#play');
+    $play.on(od, function () {
+      if (audio.paused) {
+        audio.play();
+      }else {
+        audio.pause();
+      }
+    });
+  }
   $('#loveBtn').on(od, function () {//上传并抽取电影票点击事件
     var sLoveInpVal = $loveInp.val();
     if (sLoveInpVal.length>30) {

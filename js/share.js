@@ -169,6 +169,7 @@ function onloadFun() {
             });
 
             wx.ready(function () {
+                document.getElementById('audio').play();
                 wx.onMenuShareAppMessage({
                     title: wxtitle,
                     desc: wxdesc,
@@ -180,7 +181,7 @@ function onloadFun() {
                     success: function (res) {
                         RecordShare("好友",JSON.stringify(res));
                         // alert("分享成功"); 分享给好友
-
+                        window.location.href = 'afterShare.html';
                     },
                     cancel: function (res) {
                         // alert("cancel");
@@ -198,7 +199,7 @@ function onloadFun() {
                     success: function (res) {
                         RecordShare("朋友圈", JSON.stringify(res));
                         // alert("分享成功"); 分享给好友
-
+                        window.location.href = 'afterShare.html';
                     },
                     cancel: function (res) {
                         // alert("cancel");

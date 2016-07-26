@@ -63,6 +63,12 @@ body {
   left:50%;
   margin-left: -320px;
 }
+.music {
+	font-size: 40px;
+	color:red;
+	left: 0;
+	top: 0;
+}
 
 /* loading */
 .loadingBg {
