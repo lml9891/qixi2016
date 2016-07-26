@@ -338,26 +338,26 @@ body {
 	-ms-border-radius: 31px;
 	background: rgba(255,255,255,0.5);
 	border:2px solid #fff;
+  animation:indexCircleBox 3s infinite linear;
+  -webkit-animation:indexCircleBox 3s infinite linear;
 }
 .indexCircleBox1 {
 	left: 548px;/*218px;*/
 	top: 496px;
-  animation:indexCircleBox 3s infinite linear;
-  -webkit-animation:indexCircleBox 3s infinite linear;
 	z-index: 5;
 }
 .indexCircleBox2 {
 	left: 130px;
   top: 40px;
-  animation:indexCircleBox 3s infinite linear 0.5s;
-  -webkit-animation:indexCircleBox 3s infinite linear 0.5s;
+  /*animation:indexCircleBox 3s infinite linear 0.5s;*/
+  /*-webkit-animation:indexCircleBox 3s infinite linear 0.5s;*/
 }
 .indexCircleBox3 {
 	left: 338px;
 	top: 866px;
 	z-index: 4;
-  animation:indexCircleBox 3s infinite linear 1s;
-  -webkit-animation:indexCircleBox 3s infinite linear 1s;
+  /*animation:indexCircleBox 3s infinite linear 1s;*/
+  /*-webkit-animation:indexCircleBox 3s infinite linear 1s;*/
 }
 .indexShip {
 	width: 677px;

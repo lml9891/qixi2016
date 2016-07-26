@@ -20,7 +20,7 @@ $(function () {
   //真正页面运行
   $('#carBg').show();
   jq360();
-  
+
 });
 /**
  * img array 必须 加载的图片
@@ -109,10 +109,10 @@ function jq360(){
 			finalCoord.y = event.targetTouches[0].pageY;
 
 			//当横向滑动距离大于5时，则判断为有效滑动并执行向左滑动的方法。反之则向向右滑动。
-			if(finalCoord.x - shiftCoord.x > 5){
+			if(finalCoord.x - shiftCoord.x > 20){
 				showPicLeft();
 				shiftCoord.x = finalCoord.x;
-			}else if(finalCoord.x - shiftCoord.x < -5){
+			}else if(finalCoord.x - shiftCoord.x < -20){
 				showPicRight();
 				shiftCoord.x = finalCoord.x;
 		   }
