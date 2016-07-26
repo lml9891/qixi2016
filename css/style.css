@@ -253,6 +253,36 @@ body {
 	transition:top 1s, left 1s;
 	-webkit-transition:top 1s, left 1s;
 }
+.indexCar1 {
+	width: 49px;
+	height: 48px;
+	background: url(../images/indexCar1.png) no-repeat;
+	background-size: 100% 100%;
+	left:415px;
+	top: 200px;
+  animation:indexCar1 2.5s infinite linear;
+  -webkit-animation:indexCar1 2.5s infinite linear;
+}
+.indexCar2 {
+	width: 49px;
+	height: 48px;
+	background: url(../images/indexCar2.png) no-repeat;
+	background-size: 100% 100%;
+	left:160px;
+	top: 190px;
+  animation:indexCar1 2.5s infinite linear;
+  -webkit-animation:indexCar1 2.5s infinite linear;
+}
+
+@-webkit-keyframes indexCar1{
+	0%{
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+  }100%{
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+  }
+}
 .indexTitle {
 	background: url(../images/indexCar.png) no-repeat;
 	background-size:640px 1038px;
