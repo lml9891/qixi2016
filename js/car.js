@@ -152,3 +152,4 @@ function jq360(){
 	});
 
 };
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

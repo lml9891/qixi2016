@@ -25,16 +25,12 @@ $(function () {
           }
         });
       }
-      
-      if (typeof data.Data.RealName !== 'undefined') {
+      if (data.ReturnCode === '-001') {
+        $name.attr('placeholder','请输入您的电话');
         $name.attr('placeholder','请输入您的名字');
       }else {
-        $name.val(data.Data.RealName);
-      }
-      if (typeof data.Data.Mobile !== 'undefined') {
-        $name.attr('placeholder','请输入您的电话');
-      }else {
         $name.val(data.Data.Mobile);
+        $name.val(data.Data.RealName);
       }
       $infoSub.on(od, function () {
         var sTimeVal = $time.val();
@@ -66,3 +62,4 @@ $(function () {
     }
   });
 });
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

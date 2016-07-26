@@ -25,6 +25,7 @@ a{color:#000; text-decoration:none;}
 .w50 {width:50%;}
 .auto {margin: 0 auto;}
 .tac {text-align:center;}
+.tar {text-align:right;}
 .ti {text-indent:2em;}
 .ti1 {text-indent:1em;}
 .bgn {background:none;}
@@ -88,14 +89,25 @@ body {
 	height: 1138px;
 	top:-1px;
 }
-
+.music {
+	width: 52px;
+	height: 52px;
+	left:508px;
+	top: 170px;
+	background: url(../images/indexPlay.png) no-repeat center top;
+	background-size: 100% 100%;
+}
+.musicOn {
+	background: url(../images/indexPause.png) no-repeat center top;
+	background-size: 100% 100%;
+}
 .indexBgImg {
 	background: url(../images/indexBg.jpg) no-repeat center top;
 	background-size: 1280px 1138px;
 	width: 1280px;
 	height: 1138px;
 	top:0;
-	left: 11px;
+	left: 0;
 }
 .floorBg {
 	height: 1040px;
@@ -111,7 +123,7 @@ body {
 	background-size: 100% 100%;
 	height: 1140px;
 	width: 1280px;
-	left: 11px;/*-320px;*/
+	left: 0;/*-320px;*/
 	top: 0;
 }
 .dafs {
@@ -122,6 +134,20 @@ body {
 	color: red;
 	z-index: 9999999999;
 }
+.loadInMove {
+	animation:floorBgImgMove 1s 1 forwards;
+	-webkit-animation:floorBgImgMove 1s 1 forwards;
+}
+@-webkit-keyframes floorBgImgMove{
+	0%{
+		transform: translate3D(0,0,0);
+		-webkit-transform: translate3D(0,0,0);
+  }100%{
+		transform: translate3D(-260px,0,0);
+		-webkit-transform: translate3D(-260px,0,0);
+  }
+}
+
 .floorBgImgIn {
 	animation:floorBgImgIn 1s 1 forwards;
 	-webkit-animation:floorBgImgIn 1s 1 forwards;
@@ -129,11 +155,11 @@ body {
 
 @-webkit-keyframes floorBgImgIn{
 	0%{
-		transform: scale(1) translate3D(0,0,0);
-		-webkit-transform: scale(1) translate3D(0,0,0);
+		transform: scale(1) translate3D(-11px,0,0);
+		-webkit-transform: scale(1) translate3D(-11px,0,0);
   }100%{
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(2) translate3D(45px,197px,0);
+		-webkit-transform: scale(2) translate3D(45px,197px,0);
   }
 }
 .floorBgImgOut {
@@ -143,11 +169,11 @@ body {
 
 @-webkit-keyframes floorBgImgOut{
 	0%{
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }100%{
-		transform: scale(1) translate3D(0,0,0);
-		-webkit-transform: scale(1) translate3D(0,0,0);
+		transform: scale(1) translate3D(-260px,0,0);
+		-webkit-transform: scale(1) translate3D(-260px,0,0);
   }
 }
 .star1Bg {
@@ -178,16 +204,16 @@ body {
 @-webkit-keyframes starBgInAnim{
 	0%{
 		opacity:1;
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }50%{
 		opacity:0;
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }100%{
 		opacity:1;
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }
 }
 @-webkit-keyframes starBgOutAnim{
@@ -213,15 +239,15 @@ body {
 		transform: scale(1) translate3D(0,0,0);
 		-webkit-transform: scale(1) translate3D(0,0,0);
   }100%{
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }
 }
 
 @-webkit-keyframes starBgOut{
 	0%{
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }100%{
 	transform: scale(1) translate3D(0,0,0);
 	-webkit-transform: scale(1) translate3D(0,0,0);
@@ -234,8 +260,8 @@ body {
 
 @-webkit-keyframes floorBgImgOut{
 	0%{
-		transform: scale(1.9) translate3D(80px,197px,0);
-		-webkit-transform: scale(1.9) translate3D(80px,197px,0);
+		transform: scale(1.9) translate3D(45px,197px,0);
+		-webkit-transform: scale(1.9) translate3D(45px,197px,0);
   }100%{
 		transform: scale(1) translate3D(0,0,0);
 		-webkit-transform: scale(1) translate3D(0,0,0);
@@ -260,8 +286,8 @@ body {
 	background-size: 100% 100%;
 	left:415px;
 	top: 200px;
-  animation:indexCar1 2.5s infinite linear;
-  -webkit-animation:indexCar1 2.5s infinite linear;
+  animation:indexCar1 1s infinite linear;
+  -webkit-animation:indexCar1 1s infinite linear;
 }
 .indexCar2 {
 	width: 49px;
@@ -270,8 +296,8 @@ body {
 	background-size: 100% 100%;
 	left:160px;
 	top: 190px;
-  animation:indexCar1 2.5s infinite linear;
-  -webkit-animation:indexCar1 2.5s infinite linear;
+  animation:indexCar1 1s infinite linear;
+  -webkit-animation:indexCar1 1s infinite linear;
 }
 
 @-webkit-keyframes indexCar1{
@@ -307,7 +333,7 @@ body {
 	height: 143px;
 	background: url(../images/indexHeart.png) no-repeat;
 	background-size:100% 100%;
-	left: 540px;/*209px;*/
+	left: 530px;/*209px;*/
   top: 296px;
 }
 .indexBig {
@@ -451,22 +477,13 @@ body {
 		transform: rotate(0);
   }
 }
-/*@-webkit-keyframes indexShip0{
-	0%{
-		-webkit-transform: translate(0,0);
-		transform: translate(0,0);
-  }100%{
-		-webkit-transform: translate(1005px,0);
-		transform: translate(1005px,0);
-  }
-}*/
 .indexView {
-	width: 87px;
-  height: 164px;
+	width: 91px;
+  height: 173px;
   background: url(../images/indexView.jpg) no-repeat;
   background-size: 100% 349px;
-	left: 290px;
-  top: 512px;
+	left: 293px;
+  top: 510px;
 }
 .indexFontGo {
 	top: 50%;
@@ -559,32 +576,40 @@ body {
 }
 
 .goodList li {
-	padding: 0 0 0 36px;
-	color: #fff;
+	padding: 4px 0 4px 36px;
+	margin-bottom: 24px;
+	color: #333;
+	background: rgba(255,255,255,0.7);
 }
 
 .goodListL {
 	float: left;
 	width: 390px;
-	font-size: 30px;
-	line-height: 104px;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
 }
+.goodListLh2 {
+	font-size: 20px;
+	line-height: 38px;
+}
+.goodListLP {
+	font-size: 28px;
+	line-height: 38px;
+}
 .goodListR {
 	width: 122px;
-	padding: 21px 0;
+	padding: 28px 0 0;
 	float: left;
 }
 .goodHeart {
 	width: 122px;
 	height: 42px;
 	background: url(../images/good.png) no-repeat center top;
-	background-position: -484px -673px;
+	background-position: -469px -653px;
 }
 .goodHeartOn {
-	background-position: -484px -400px;
+	background-position: -468px -346px;
 }
 .goodNum {
 	font-size: 14px;
@@ -601,6 +626,14 @@ body {
   height: 570px;
   background: url(../images/love.png) no-repeat;
   background-size:100% 2280px;
+  top:0;
+  left:0;
+}
+.loveTitle {
+  width: 640px;
+  height: 200px;
+  background: url(../images/loveTitle.png) no-repeat;
+  background-size:100% 100%;
   top:0;
   left:0;
 }
@@ -630,11 +663,13 @@ body {
   left: 75px;
 }
 .loveInp {
+	margin-bottom: 24px;
   width: 450px;
   height: 84px;
   line-height: 84px;
   padding: 0 20px;
-  font-size: 30px
+  font-size: 30px;
+	color: #333;
 }
 .loveBtn {
   width: 390px;
@@ -642,7 +677,7 @@ body {
   background: url(../images/loveBtn.png) no-repeat;
   background-size:100% 100%;
   display: block;
-  margin: 95px auto 0;
+  margin: 0 auto;
 }
 .lovepreview {
   top:0;
@@ -679,8 +714,8 @@ body {
   height: 149px;
   background: url(../images/loveSuc.png) no-repeat;
   background-size:100% 100%;
-  margin: 217px auto 0;
-  padding-top: 397px;
+  margin: 0 auto;
+  padding-top: 614px;
 }
 .loveSucBtn {
   width: 222px;
@@ -706,8 +741,8 @@ body {
   height: 149px;
   background: url(../images/orderSuc.png) no-repeat;
   background-size:100% 100%;
-  margin: 217px auto 0;
-  padding-top: 397px;
+  margin: 0 auto;
+  padding-top: 614px;
 }
 .orderSucBtn {
   width: 222px;
@@ -721,10 +756,10 @@ body {
   height: 1040px;
 }
 .infoTitle {
-  padding-top: 270px;
-  line-height: 132px;
-  height: 132px;
-  font-size: 38px;
+  background: url(../images/infoTitle.png) no-repeat center top;
+  background-size:100% 100%;
+  height: 404px;
+	width: 640px;
 }
 .info {
   width: 495px;
@@ -757,9 +792,10 @@ body {
   width: 270px;
   font-size: 24px;
   line-height: 72px;
-  color: #ccc;
+  color: #333;
   height: 72px;
 	background: #fff;
+	color: 333px;
 }
 .infoBoxR2 {
   width: 270px;
@@ -768,6 +804,7 @@ body {
   color: #ccc;
   height: 230px;
 	background: #fff;
+	color: 333px;
 }
 
 .infoSpan1 {
@@ -793,10 +830,10 @@ body {
   padding-left: 17px;
 }
 .infoFullTitle {
-  padding-top: 133px;
-  line-height: 132px;
-  height: 132px;
-  font-size: 38px;
+  background: url(../images/infoFullTitle.png) no-repeat center top;
+  background-size:100% 100%;
+  width: 640px;
+  height: 284px;
 }
 
 /* 中奖页面 */
@@ -806,11 +843,11 @@ body {
   height: 1040px;
 }
 .win {
-  margin: 218px auto; 0;
+  margin: 0 auto;
   background: url(../images/win.png) no-repeat center top;
   background-size:100% 100%;
   width: 491px;
-  height: 746px;
+  height: 963px;
 }
 .winTip1 {
   width: 491px;
@@ -827,7 +864,7 @@ body {
   left:0;
 }
 .winBack {
-  top: 673px;
+  top: 890px;
   left: 126px;
   width: 239px;
   height: 73px;
@@ -838,7 +875,7 @@ body {
   line-height: 72px;
   left: 50px;
   font-size: 30px;
-  top: 315px;
+  top: 533px;
 }
 /* 未中奖(lose) */
 .loseBg {
@@ -847,15 +884,15 @@ body {
   height: 1040px;
 }
 .lose {
-  margin: 217px auto 0;
+  margin: 0 auto;
   background: url(../images/lose.png) no-repeat center top;
   background-size:100% 100%;
   width: 491px;
-  height: 546px;
+  height: 763px;
 }
 .loseBtn {
   left:51px;
-  top:357px;
+  top:575px;
   width: 389px;
   height: 73px;
 }
@@ -890,7 +927,7 @@ body {
   width: 91px;
   height: 115px;
   right: 90px;
-  top:861px;
+  top:786px;
   transform: scale(0.8);
   -webkit-transform: scale(0.8);
   animation:carInAnim 2s infinite linear;
@@ -927,6 +964,7 @@ body {
   width: 640px;
   height: 1040px;
   background: url(../images/armsFont.png) no-repeat center top;
+	background-size: 100% 100%;
 	overflow: hidden;
 
 }
@@ -938,7 +976,7 @@ body {
 }
 .arms1 {
   left: 408px;
-  top: 300px;
+  top: 270px;
   background-position: -341px 0;
   transform: translate(300px,-200px) rotate(0);
   -webkit-transform: translate(300px,-200px) rotate(0);
@@ -948,7 +986,7 @@ body {
 .arms2 {
   background-position: -171px 0;
   left: 238px;
-  top: 300px;
+  top: 270px;
   transform: translate(464px,-200px) rotate(0);
   -webkit-transform: translate(464px,-200px) rotate(0);
   animation:arms2Anim 0.5s 1 ease 0.7s forwards;
@@ -957,7 +995,7 @@ body {
 .arms3 {
   background-position: 0 0;
   left: 67px;
-  top: 300px;
+  top: 270px;
   transform: translate(590px,-200px) rotate(0);
   -webkit-transform: translate(590px,-200px) rotate(0);
   animation:arms3Anim 0.5s 1 ease 0.9s forwards;
@@ -966,7 +1004,7 @@ body {
 .arms4 {
   background-position: 0 -171px;
   left: 67px;
-  top: 471px;
+  top: 441px;
   transform: translate(590px,-200px) rotate(0);
   -webkit-transform: translate(590px,-200px) rotate(0);
   animation:arms4Anim 0.5s 1 ease 1.1s forwards;
@@ -975,25 +1013,25 @@ body {
 .arms5 {
   background-position: 0 -341px;
   left: 67px;
-  top: 641px;
+  top: 611px;
   transform: translate(590px,-200px) rotate(0);
   -webkit-transform: translate(590px,-200px) rotate(0);
   animation:arms5Anim 0.5s 1 ease 1.3s forwards;
   -webkit-animation:arms5Anim 0.5s 1 ease 1.3s forwards;
 }
 .arms6 {
-  background-position: -171px -341px;
+  background-position: -171px -171px;
   left: 238px;
-  top: 641px;
+  top: 611px;
   transform: translate(590px,-200px) rotate(0);
   -webkit-transform: translate(590px,-200px) rotate(0);
   animation:arms6Anim 0.5s 1 ease 1.5s forwards;
   -webkit-animation:arms6Anim 0.5s 1 ease 1.5s forwards;
 }
 .arms7 {
-  background-position: -341px -341px;
+  background-position: -341px -171px;
   left: 408px;
-  top: 641px;
+  top: 611px;
   transform: translate(590px,-200px) rotate(0);
   -webkit-transform: translate(590px,-200px) rotate(0);
   animation:arms7Anim 0.5s 1 ease 1.7s forwards;
@@ -1001,9 +1039,9 @@ body {
 }
 .arms8 {
   width: 334px;
-  background-position: -171px -171px;
+  background-position: -171px -341px;
   left: 238px;
-  top: 471px;
+  top: 441px;
   transform: translate(590px,0);
   -webkit-transform: translate(590px,0);
 }
@@ -1097,8 +1135,8 @@ body {
   transform: translate(-497px,0);
 }
 .armsFontIn {
-  animation:armsFontAnim 0.5s 1 1s ease forwards;
-  -webkit-animation:armsFontAnim 0.5s 1 1s ease forwards;
+  animation:armsFontAnim 2.5s 1 1s ease forwards;
+  -webkit-animation:armsFontAnim 2.5s 1 1s ease forwards;
 }
 
 /* 动画 */
@@ -1199,7 +1237,7 @@ body {
 }
 /*扫光*/
 .slideShine {
-    background: #ccc -webkit-linear-gradient(left, #ccc, #fff) 0 0 no-repeat;
+    background: #111 -webkit-linear-gradient(left, #111, #fff) 0 0 no-repeat;
     -webkit-background-size: 80px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
@@ -1215,11 +1253,17 @@ body {
 }
 /* afterShare */
 .afterShareBtn {
-	background: url(../images/afterShareBtn.jpg) no-repeat;
-  background-size:100% 100%;
-  width: 260px;
-  height: 85px;
+  width: 307px;
+  height: 74px;
   left:50%;
-	margin-left: -130px;
-  top:870px;
+	margin-left: -153px;
+  top:750px;
+}
+.afterShare {
+	background: url(../images/afterShare.jpg) no-repeat;
+  background-size:100% 100%;
+}
+.loveFontGo2 {
+	top: 475px;
+  left: 265px;
 }

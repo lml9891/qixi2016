@@ -48,7 +48,7 @@ $(function () {
         }
 
         add_activity_customer_info(sNameVal,sTelVal,data.Data.ProvinceName,data.Data.CityName,data.Data.CarSeries,sDealerVal,sSalesVal,sTimeVal, function (data) {
-          if (data.Success) {
+          if (data.ReturnCode === '000') {
             window.location.href = 'orderSuc.html';
           }
         });

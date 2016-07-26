@@ -6,14 +6,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="format-detection" content="telephone=no" />
 <title>把你交给我</title>
-<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css?b=25" type="text/css" rel="stylesheet" />
 <script src="libs/zepto.min.js?1"></script>
 <script src="js/ajax.js"></script>
-<script src="js/index.js?b=20"></script>
+<script src="js/index.js?b=25"></script>
 </head>
 <body>
-<!-- <audio id="audio" src="http://zjlt.sc.chinaz.com/Files/DownLoad/sound1/201204/1314.mp3" autoplay loop></audio> -->
-	<!-- <div class="dafs"></div> -->
+<audio id="audio" src="indexMusic.mp3" autoplay loop></audio>
+	<div class="dafs"></div>
 <div class="porR wrapper indexWraper">
 	<div id="loadingBg" class="o0 loadingBg">
 		<p class="cfff tac loadingTip">Loading&nbsp;<span id="loading">0</span>%&nbsp;...</p>
@@ -22,6 +22,8 @@
 		<div id="indexBgImg" class="porA indexBgImg"></div>
 		<img id="floorBgImg" class="porA floorBgImg" />
 		<div id="floorBg" class="porA floorBg"><!--楼-->
+			<div id="star1Bg" class="porA star1Bg changeWord starBgOutAnim">星星1</div><!--starBgOutAnim-->
+			<div id="star2Bg" class="porA star2Bg o0 changeWord starBgOutAnim">星星2</div>
 			<div id="indexHeart" class="porA indexHeart changeWord">心</div>
 			<div id="indexView" class="o0 porA indexView"><!--文字跑马灯-->
 					<div id="indexFontGo" class="oh porA indexFontGo">
@@ -30,7 +32,9 @@
 						</div>
 					</div>
 			</div>
-			<div id="indexBig" class="porA indexBig changeWord">放大镜</div>
+			<div class="indexBigBox">
+				<div id="indexBig" class="porA indexBig changeWord">放大镜</div>
+			</div>
 			<div id="indexTip" class="porA indexTip changeWord">七夕让你的表白登上震旦</div>
 			<div class="porA indexShip changeWord indexShipAnim">水波</div>
 			<a id="indexShip0" class="porA indexShip0" href="love.html">
@@ -46,14 +50,12 @@
 				<span class="o0 indexCircle changeWord">呼吸按钮-车</span>
 			</a>
 		</div>
-		<div id="star1Bg" class="porA star1Bg changeWord starBgOutAnim">星星1</div>
-		<div id="star2Bg" class="porA star2Bg o0 changeWord starBgOutAnim">星星2</div>
 		<div class="indexTitle porA changeWord">把你交给我 把全新科鲁兹交给我</div>
 		<a id="indexCircleBox1" href="javascript:;" class="porA indexCircleBox indexCircleBox1">
 			<span class="o0 indexCircle changeWord">呼吸按钮-楼</span>
 		</a>
 	</div>
-	<!-- <a id="play" href="javascript:;" class="porA music" style="z-index:9;">音乐</a> -->
+	<a id="play" href="javascript:;" class="porA music" style="z-index:9;"></a>
 </div>
 <script src="js/share.js"></script>
 </body>
