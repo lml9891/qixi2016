@@ -4,6 +4,8 @@
     // 'qixi2016App.constants',
     'ngResource',
     'ngSanitize',
+    'ngAnimate',
+    'ngTouch',
     'angular-loading-bar',
     'ui.router'
   ])
