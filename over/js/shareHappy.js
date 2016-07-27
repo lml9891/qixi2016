@@ -102,7 +102,7 @@ var wxtitle = "抢位置：七夕情话上震旦，让全中国看见";
 
 var wxdesc = "抢位置：七夕情话上震旦，让全中国看见";
 
-var wxlink = "http://wx.fractalist.com.cn/chevroletapitest/7-7/info.html";
+var wxlink = "http://wx.fractalist.com.cn/chevroletapitest/7-7/afterShare.html?b=1";
 var wximgUrl = "http://wx.fractalist.com.cn/chevroletapitest/7-7/share/share.jpg";
 window.addEventListener('load', onloadFun, false);
 
@@ -181,7 +181,7 @@ function onloadFun() {
                     success: function (res) {
                         RecordShare("好友",JSON.stringify(res));
                         // alert("分享成功"); 分享给好友
-                        // window.location.href = 'info.html';
+                        window.location.href = 'info.html';
                     },
                     cancel: function (res) {
                         // alert("cancel");
@@ -199,7 +199,7 @@ function onloadFun() {
                     success: function (res) {
                         RecordShare("朋友圈", JSON.stringify(res));
                         // alert("分享成功"); 分享给好友
-                        // window.location.href = 'info.html';
+                        window.location.href = 'info.html';
                     },
                     cancel: function (res) {
                         // alert("cancel");

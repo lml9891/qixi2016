@@ -2,7 +2,12 @@
 //引入微信文件
 document.write("<script src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>");
 //记录分享信息
+var sObjAudio = document.getElementById('audio');
 
+  wx.config({debug:false,appId: 'wx2d2fd8b8b9efa1ad',timestamp: 10000,nonceStr: 'hellokawa',signature: '9b9cb0846a20e5acfb5bee311daafd5570145dba',jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'chooseImage', 'uploadImage', 'getNetworkType']});
+  wx.ready(function(){
+  	document.getElementById('audio').play();
+  });
 //根据QueryString参数名称获取值
 function getQueryStringByName(name) {
     var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
@@ -102,7 +107,7 @@ var wxtitle = "抢位置：七夕情话上震旦，让全中国看见";
 
 var wxdesc = "抢位置：七夕情话上震旦，让全中国看见";
 
-var wxlink = "http://wx.fractalist.com.cn/chevroletapitest/7-7/afterShare.html?b=1";
+var wxlink = "http://wx.fractalist.com.cn/chevroletapitest/7-7/index.aspx";
 var wximgUrl = "http://wx.fractalist.com.cn/chevroletapitest/7-7/share/share.jpg";
 window.addEventListener('load', onloadFun, false);
 
@@ -169,7 +174,7 @@ function onloadFun() {
             });
 
             wx.ready(function () {
-                document.getElementById('audio').play();
+                sObjAudio.play();
                 wx.onMenuShareAppMessage({
                     title: wxtitle,
                     desc: wxdesc,
@@ -181,7 +186,7 @@ function onloadFun() {
                     success: function (res) {
                         RecordShare("好友",JSON.stringify(res));
                         // alert("分享成功"); 分享给好友
-                        window.location.href = 'info.html';
+                        // window.location.href = 'info.html';
                     },
                     cancel: function (res) {
                         // alert("cancel");
@@ -199,7 +204,7 @@ function onloadFun() {
                     success: function (res) {
                         RecordShare("朋友圈", JSON.stringify(res));
                         // alert("分享成功"); 分享给好友
-                        window.location.href = 'info.html';
+                        // window.location.href = 'info.html';
                     },
                     cancel: function (res) {
                         // alert("cancel");

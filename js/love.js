@@ -30,7 +30,7 @@ $(function () {
       $('#infoError').html('您输入的情话大于14字');
       return;
     }
-    
+
     if (sLoveInpVal.length<3) {
       $('#infoError').html('您输入的情话小于3字');
       return;
@@ -43,7 +43,7 @@ $(function () {
       $('#infoError').html('To不能为空');
       return;
     }
-    add_love_content(sLoveInpVal,function (data) {
+    add_love_content(sLoveInpVal,sLoveFromVal,sLoveToVal,function (data) {
       if (data.Success) {
         $('#lovepreview').show().addClass('showAnim').on('webkitAnimationEnd', function () {
           $(this).off();
@@ -66,7 +66,7 @@ function autoTabFont() {
   var $loveFontGoScroll = $('#loveFontGoScroll');
   var $loveFontGoContent = $('.loveFontGoContent');
   var loveFontGoHeight = $loveFontGo.height();
-    $loveFontGoContent.html($('#loveInp').val());//赋值
+    $loveFontGoContent.html('From '+ $('#loveFrom').val() +'<br />'+ $('#loveInp').val() + '<br />' + 'To ' + $('#loveTo').val());//赋值
   var loveFontGoContentHeight = $loveFontGoContent.height();
   var iNow = 0;
 
@@ -76,7 +76,7 @@ function autoTabFont() {
 
   $loveFontGoScroll.append($loveFontGoContent.clone());
 
-  oAutoTime = setInterval(autoTabGo,10);
+  oAutoTime = setInterval(autoTabGo,20);
 
   function autoTabGo() {
     var loveFontGoScrollTop = $loveFontGoScroll.offset().top;

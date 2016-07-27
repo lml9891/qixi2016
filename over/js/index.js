@@ -51,8 +51,9 @@ $(function () {
                 $loadingBg.addClass('hideAnim').on('webkitAnimationEnd', function () {
                   //真正页面运行
                   $(this).hide().off();
-                  $('#indexFontGoContent').html(data.Message);
+                  $('#indexFontGoContent').html('From '+data.Data.LoveFrom+'<br />'+data.Message + '<br />' + 'To ' + data.Data.LoveTo);
                   init();
+                  clearTimeout(loadingTime);
                 });
               }
             });
@@ -67,7 +68,6 @@ $(function () {
 
   function init() {
     musicFn();
-
     function musicFn() {
       var $music = $('#music');
       var $audio = $('#audio');
@@ -84,7 +84,7 @@ $(function () {
       });
     }
     //重力
-    setTimeout(orientation, 300);
+    setTimeout(orientation, 4000);
 
     //自动走
     autoMove();
@@ -103,7 +103,7 @@ $(function () {
 
     function toBig(isGoOut) {
       bCanGravity = false;
-      clearTimeout(time);
+      clearInterval(time);
       bCanMove = false;
 
       $indexBig.hide();
@@ -341,7 +341,7 @@ function autoTabFont() {
   $indexFontGoScroll.append($indexFontGoContent.clone());
 
   clearInterval(oAutoTime);
-  oAutoTime = setInterval(autoTabGo,10);
+  oAutoTime = setInterval(autoTabGo,20);
 
   function autoTabGo() {
     var indexFontGoScrollTop = $indexFontGoScroll.offset().top;

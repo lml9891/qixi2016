@@ -35,7 +35,7 @@ function autoTabFont() {
 
   $loveFontGoScroll.append($loveFontGoContent.clone());
 
-  oAutoTime = setInterval(autoTabGo,10);
+  oAutoTime = setInterval(autoTabGo,20);
 
   function autoTabGo() {
     var loveFontGoScrollTop = $loveFontGoScroll.offset().top;

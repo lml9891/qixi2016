@@ -20,9 +20,9 @@ $(function () {
       $.each(data.Data, function (i,k) {
         sHtml += '<li class="clear">'+
           '<div class="goodListL">'+
-            '<h2 class="goodListLh2 slideShine">From </h2>'+
-            '<p class="goodListLP slideShine">'+ k.Content +'</p>'+
-            '<h2 class="goodListLh2 tar slideShine">To </h2>'+
+            '<h2 class="goodListLh2">From '+ k.LoveFrom +'</h2>'+
+            '<p class="goodListLP">'+ k.Content +'</p>'+
+            '<h2 class="goodListLh2 tar">To '+ k.LoveTo +'</h2>'+
           '</div>'+
           '<div class="goodListR">';
             if (k.IsClicked) {

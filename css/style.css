@@ -286,8 +286,8 @@ body {
 	background-size: 100% 100%;
 	left:415px;
 	top: 200px;
-  animation:indexCar1 1s infinite linear;
-  -webkit-animation:indexCar1 1s infinite linear;
+  animation:indexCar1 0.5s infinite linear;
+  -webkit-animation:indexCar1 0.5s infinite linear;
 }
 .indexCar2 {
 	width: 49px;
@@ -296,8 +296,8 @@ body {
 	background-size: 100% 100%;
 	left:160px;
 	top: 190px;
-  animation:indexCar1 1s infinite linear;
-  -webkit-animation:indexCar1 1s infinite linear;
+  animation:indexCar1 0.5s infinite linear;
+  -webkit-animation:indexCar1 0.5s infinite linear;
 }
 
 @-webkit-keyframes indexCar1{
@@ -529,7 +529,7 @@ body {
 	background: url(../images/good.png) no-repeat center top;
 	background-position: -295px -815px;
 	left: 295px;
-	top: 725px;
+	top: 795px;
 	width: 48px;
   animation:goodToAnim 3s infinite linear;
   -webkit-animation:goodToAnim 3s infinite linear;
@@ -547,7 +547,7 @@ body {
 .iWrapper {
 	z-index: 1;
 	overflow: hidden;
-	height: 351px;
+	height: 421px;
 	width: 640px;
 }
 
@@ -904,7 +904,7 @@ body {
 }
 .repeatBtn {
   left: 208px;
-  top: 575px;
+  top: 525px;
   width: 223px;
   height: 74px;
 }

@@ -1,6 +1,7 @@
 
 
-    var domain = "http://wx.fractalist.com.cn/chevroletapitest";
+    // var domain = "http://wx.fractalist.com.cn/chevroletapitest";
+    var domain = 'http://chevrolet.6vi.com';
 
     //数据请求
     function upload(url, param, callback) {
@@ -70,11 +71,13 @@
     }
 
     //提交表白内容
-    function add_love_content(Content,callback) {
+    function add_love_content(Content,From,To,callback) {
         //
         var params = $.param({
             OpenID: "123",
             NickName: "昵称",
+            LoveFrom: From,
+            LoveTo: To,
             Content: Content
         });
         var url = domain + "/7-7/CommonHandler.ashx?action=add_love_content";
