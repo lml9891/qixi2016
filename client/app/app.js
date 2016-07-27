@@ -9,12 +9,15 @@
     'angular-loading-bar',
     'ui.router'
   ])
-    .config(($urlRouterProvider)=>{
-
+    .config(($urlRouterProvider, $locationProvider) =>{
       $urlRouterProvider.otherwise(($injector, $location)=>{
         var $state = $injector.get("$state");
         $state.go("main");
       });
+      $locationProvider.html5Mode(true);
+
+      // $locationProvider.html5Mode(true);
+
 
     })
 
