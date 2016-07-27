@@ -2,6 +2,8 @@
 
   angular.module('qixi2016App', [
     // 'qixi2016App.constants',
+    'ngResource',
+    'ngSanitize',
     'angular-loading-bar',
     'ui.router'
   ])
