@@ -7,6 +7,5 @@ dist
 /server/config/local.env.js
 npm-debug.log
 coverage
-*.zip
-psd_
 img_
+psd_
