@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<title>把你交给我</title>
+<link href="css/style.css?d=1" type="text/css" rel="stylesheet" />
+<script src="libs/zepto.min.js?1"></script>
+<script src="js/ajax.js"></script>
+<script src="js/infoFull.js"></script>
+</head>
+<body>
+<!-- <audio id="audio" src="http://zjlt.sc.chinaz.com/Files/DownLoad/sound1/201204/1314.mp3" autoplay loop></audio> -->
+<div class="porR wrapper">
+	<div id="infoBg" class="posCenter infoBg">
+		<h2 class="tac cfff infoFullTitle changeWord">个人信息</h2>
+		<div class="auto info">
+			<div class="clear infoBox">
+				<div class="infoBoxL fl">
+					<span class="fl">姓</span>
+					<span class="fr">名</span>
+				</div>
+				<span class="infoBoxLine tac fl">|</span>
+				<input id="name" type="text" class="infoBoxR fl">
+			</div>
+			<div class="clear infoBox">
+				<div class="infoBoxL fl">
+					<span class="fl">手</span>
+					<span class="fl infoSpan1">机</span>
+					<span class="fr">号</span>
+				</div>
+				<span class="infoBoxLine tac fl">|</span>
+				<input id="tel" type="tel" class="infoBoxR fl">
+			</div>
+			<div class="clear infoBox">
+				<div class="infoBoxL infoBoxL2 fl">
+					<span class="fl">经</span>
+					<span class="fl infoSpan1">销</span>
+					<span class="fr">商</span>
+				</div>
+				<span class="infoBoxLine infoBoxLine2 tac fl">|</span>
+				<div class="infoBoxR2 fl">
+					<select id="dealer1" class="resetSel infoSel">
+						<option value="0">请选择</option>
+						<option value="小李">小李</option>
+						<option value="小张">小张</option>
+						<option value="小红">小红</option>
+					</select>
+					<select id="dealer2" class="resetSel infoSel">
+						<option value="0">请选择</option>
+						<option value="小李">小李</option>
+						<option value="小张">小张</option>
+						<option value="小红">小红</option>
+					</select>
+					<select id="dealer3" class="resetSel infoSel">
+						<option value="0">请选择</option>
+						<option value="小李">小李</option>
+						<option value="小张">小张</option>
+						<option value="小红">小红</option>
+					</select>
+				</div>
+			</div>
+			<div class="clear infoBox">
+				<div class="infoBoxL fl">意向购车时间</div>
+				<span class="infoBoxLine tac fl">|</span>
+				<select id="time" class="resetSel infoBoxR fl">
+					<option value="0">请选择</option>
+					<option value="1">三个月内</option>
+					<option value="2">三到六个月</option>
+					<option value="3">六个月以上</option>
+				</select>
+			</div>
+			<p id="infoError" class="cRed tac infoError"></p>
+			<a id="infoSub" href="javascript:;" class="changeWord auto db infoSub infoSub2">抽取电影票</a>
+		</div>
+	</div>
+	<!-- <a id="play" href="javascript:;" class="porA music">音乐</a> -->
+</div>
+<script src="js/share.js"></script>
+</body>
+</html>

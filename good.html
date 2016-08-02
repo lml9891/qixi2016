@@ -1,0 +1,77 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>把你交给我</title>
+    <link href="css/style.css?d=2" type="text/css" rel="stylesheet" />
+    <script src="libs/zepto.min.js"></script>
+    <script src="libs/iscroll.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/good.js?d=2"></script>
+    <style>
+        .modal-bg {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+            opacity: 0.5;
+            z-index: 1000;
+        }
+
+        .modal-img {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            width: 20%;
+            height: 20%;
+            z-index: 1001;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <audio id="audio" src="http://zjlt.sc.chinaz.com/Files/DownLoad/sound1/201204/1314.mp3" autoplay loop></audio> -->
+    <audio id="audio" src="https://lml9891.github.io/qixi2016/indexMusic.mp3" autoplay="" loop=""></audio>
+
+    <div class="porR wrapper">
+        <div id="goodBg" class="posCenter goodBg">
+            <h2 class="goodH2 changeWord">为你心中最美情话点个赞</h2>
+            <div id="iWrapper" class="iWrapper porR">
+                <div class="iScroller">
+                    <ul id="goodList" class="goodList">
+ 
+                               <li class="clear">
+                                    <div class="goodListL">
+                                        <h2 class="goodListLh2">To LoveTo</h2>
+                                        <p class="goodListLP">Content</p>
+                                        <h2 class="goodListLh2 tar">From LoveFrom </h2>
+                                    </div>
+                                    <div class="goodListR">
+                                        <div class="goodHeart changeWord goodHeartOn">桃心</div>
+                                        <p class="tac goodNum">LoveCount</p>
+                                    </div>
+                                </li>
+
+                    </ul>
+                </div>
+            </div>
+            <span class="porA goodTo changeWord">箭头</span>
+            <a href="love.html" class="goodBtn changeWord">我也有情话说</a>
+            <div id="modal-img" class="modal-img">
+
+            </div>
+        </div>
+        <!-- <a id="play" href="javascript:;" class="porA music">音乐</a> -->
+    </div>
+</body>
+<script src="js/share.js"></script>
+</html>
